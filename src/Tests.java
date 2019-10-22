@@ -44,11 +44,19 @@ public class Tests {
 	}
 	
 	
-	@Test //return error
-	public void testaccueil() {
+	@Test //return true
+	public void testaccueil1() {
 		Menu mnu = new Menu();
-		assertEquals(mnu.accueil(), "c");
+		assertEquals(mnu.accueil(), 1);
 	}
+	
+	@Test //return true
+	public void testaccueil2() {
+		Menu mnu = new Menu();
+		assertEquals(mnu.accueil(), 2);
+	}
+	
+	
 	
 
 }
