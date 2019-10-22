@@ -18,6 +18,14 @@ public class DessinPendu {
 	 */
 	public static void afficherEtapesPerdu(int etape) {
 		switch(etape) {
+		case 0:
+			System.out.println("\n");
+			System.out.println("\n");
+			System.out.println("\n");
+			System.out.println("\n");
+			System.out.println("\n");
+			System.out.println("\n");
+			break;
 		case 1:
 			System.out.println("\n");
 			System.out.println("\n");
@@ -108,9 +116,7 @@ public class DessinPendu {
 			System.out.println("_|____________\n");
 			System.out.println("La suicide squad ta eu !\n");
 			break;
-			
-			
-			
 		}
 	}
+
 }
