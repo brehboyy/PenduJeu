@@ -13,7 +13,7 @@ git push -u origin master
 Convention de nommage : 
     - Nom des class : MaClasse
     - Commentaire de debut de class : 
-        /*
+        /**
         * Nom de classe : MaClasse
         *
         * Description   : description de la classe et de son rôle 
@@ -23,7 +23,7 @@ Convention de nommage :
         * Date          : 23/02/2001
         * 
         * Copyright     : moi
-        */
+        **/
 
         /**
         * description de la classe.
@@ -33,7 +33,7 @@ Convention de nommage :
         *
         * @see UneAutreClasse
         * @author Jean Michel D.
-        */
+        **/
 
     - Nom des package : Tout minuscule "monpackage"
     - Les différents éléments qui composent la définition de la classe ou de l'interface devraient être indiqués dans l'ordre suivant :
@@ -47,7 +47,7 @@ Convention de nommage :
     - Nom des methodes : 
         /**
         *  Description de la methode
-        */
+        **/
     - Commentaire des methodes
         public void maMethode() {
         /** 
@@ -64,7 +64,7 @@ Convention de nommage :
         * 
         * @see UneAutreClasse#UneAutreMethode 
         * @author   Jean Dupond 
-        */
+        **/
     - Les commentaire sure une ligne (donc pas en fin de ligne) : 
          /* commentaires utiles au code */
     - Les commentaire en fin de ligne
