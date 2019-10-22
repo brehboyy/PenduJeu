@@ -18,7 +18,7 @@ public class Menu {
 	{		
 		Scanner console = new Scanner(System.in);
 		System.out.println("Bonjour et bienvenue sur le jeu du pendu de la Suicide Squad");
-		System.out.println("Veuillez sélectionner un niveau de difficulté entre 1 (débutant) et 2 (avancé) :");
+		System.out.println("Veuillez selectionnez un niveau de difficulte entre 1 (debutant) et 2 (avancÃ©) :");
         int number = console.nextInt();
   
         return number;
@@ -36,7 +36,10 @@ public class Menu {
 		System.out.println("Veuillez choisir une lettre");
 		Scanner console = new Scanner(System.in);
 		String lettre = console.nextLine();
-		
+		while(lettre.length() != 1 || !Character.isLetter(lettre.charAt(0))) {
+			System.out.println("Valeur invalide, entrez une seule lettre !");
+			lettre = console.nextLine();
+		}
 		return lettre;
 	}
 	

@@ -15,7 +15,7 @@ import org.junit.*;
  */
 public class Tests {
 	
-	
+	/* TEST DictionaireDeMot */
 	
 	@Test
 	public void testGetMotFacile() {
@@ -28,17 +28,27 @@ public class Tests {
 		DictionnaireDeMot ddm = new DictionnaireDeMot("test.txt");
 		assertEquals(ddm.getMotDur(), "publication");
 	}
-	@Test
-	public void choixLettre() {
-		System.out.println("Veuillez choisir une lettre");
-		char lettre;
-		try {
-			lettre = (char)System.in.read();
-			assertEquals(lettre, 'a');
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
+	/* TEST Menu */
+	
+	@Test //return true
+	public void testchoixLettreA() {
+		Menu mnu = new Menu();
+		assertEquals(mnu.choixLettre(), "a");
 	}
+	
+	@Test //return error
+	public void testchoixLettreB() {
+		Menu mnu = new Menu();
+		assertEquals(mnu.choixLettre(), "c");
+	}
+	
+	
+	@Test //return error
+	public void testaccueil() {
+		Menu mnu = new Menu();
+		assertEquals(mnu.accueil(), "c");
+	}
+	
 
 }
