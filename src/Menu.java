@@ -2,8 +2,6 @@ import java.util.Scanner;
 
 public class Menu {
 	
-	private Scanner console = new Scanner(System.in);
-	
 	public Menu() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -16,11 +14,13 @@ public class Menu {
 	 * @author Mael Veron
 	 * @return int le niveau de difficulte
 	 */
-	public int accueil() {		
-		
+	public int accueil() 
+	{		
+		Scanner console = new Scanner(System.in);
 		System.out.println("Bonjour et bienvenue sur le jeu du pendu de la Suicide Squad");
-		System.out.println("Veuillez sélectionnez un niveau de difficulté entre 1 (débutant) et 2 (avancé) :");
+		System.out.println("Veuillez sï¿½lectionnez un niveau de difficultï¿½ entre 1 (dï¿½butant) et 2 (avancï¿½) :");
         int number = console.nextInt();
+  
         return number;
 	}
 	
@@ -32,8 +32,11 @@ public class Menu {
 	 * @return String la lettre choisit
 	 */
 	public String choixLettre() {
+		
 		System.out.println("Veuillez choisir une lettre");
+		Scanner console = new Scanner(System.in);
 		String lettre = console.nextLine();
+		
 		return lettre;
 	}
 	
