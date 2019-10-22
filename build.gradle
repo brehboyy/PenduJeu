@@ -2,6 +2,11 @@
 plugins {
     id 'java'
     id 'eclipse'
+    id 'pmd'
+}
+
+ext {
+	pmdVersion = '5.4.1'
 }
 
 repositories {
@@ -12,5 +17,11 @@ dependencies {
     implementation 'com.google.guava:guava:28.1-jre'
 
     testImplementation 'junit:junit:4.12'
+}
+
+pmd {
+	toolVersion = 'pmdVersion'
+	ruleSetConfig = rootProject.resources.text.fromFile('config/pmd/reglesEnsembles.xml')
+	ignoreFailures = true
 }
 
