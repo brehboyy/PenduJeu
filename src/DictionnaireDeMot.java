@@ -1,12 +1,8 @@
-import static org.junit.Assert.assertEquals;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
-
-import org.junit.*;
 
 /**
  * Classe contenant le dictionnaire de mot du pendu
@@ -28,9 +24,9 @@ public class DictionnaireDeMot {
 	 * @see chargerMot
 	 * @author Ousmane Diarra
 	 */
-	public DictionnaireDeMot() {
+	public DictionnaireDeMot(String nomFichier) {
 		try {
-			InputStream flux = new FileInputStream("test.txt");
+			InputStream flux = new FileInputStream(nomFichier);
 			InputStreamReader lecture = new InputStreamReader(flux, "UTF-8");
 			BufferedReader buff = new BufferedReader(lecture);
 			String ligne;
@@ -134,17 +130,4 @@ public class DictionnaireDeMot {
 		int indexAlea = new Random().nextInt(listMotsFacile.size());
 		return listMotsFacile.get(indexAlea);
 	}
-	
-	
-	@Test
-	public void testGetMotFacile() {
-		assertEquals(getMotFacile(), "foch");
-	}
-	
-	@Test
-	public void testGetMotDur() {
-		assertEquals(getMotDur(), "publication");
-	}
-	
-
 }
