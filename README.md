@@ -25,7 +25,7 @@ Convention de nommage :
     * 
     * Copyright     : moi
     */
-
+    
     /**
     * description de la classe.
     * explication supplémentaire si nécessaire
@@ -36,7 +36,7 @@ Convention de nommage :
     * @author Jean Michel D.
     */
 
-    - Nom des package : Tout minuscule "monpackage"
+- Nom des package : Tout minuscule "monpackage"
 
 - Les différents éléments qui composent la définition de la classe ou de l'interface devraient être indiqués dans l'ordre suivant :
     les commentaires au format javadoc de la classe ou de l'interface
@@ -52,33 +52,32 @@ Convention de nommage :
     */
 
 - Commentaire des methodes
-        public void maMethode() {
-        /** 
-        * description de la méthode.
-        * explication supplémentaire si nécessaire 
-        *  
-        * @return      description de la valeur de retour 
-        * @param       arg1 description du 1er argument 
-        *    :           :         : 
-        * @param       argN description du Neme argument 
-        * @exception   Exception1  description de la première exception 
-        *    :           :         : 
-        * @exception ExceptionN  description de la Neme exception 
-        * 
-        * @see UneAutreClasse#UneAutreMethode 
-        * @author   Jean Dupond 
-        **/
+    public void maMethode() {
+    /** 
+    * description de la méthode.
+    * explication supplémentaire si nécessaire 
+    *  
+    * @return      description de la valeur de retour 
+    * @param       arg1 description du 1er argument 
+    *    :           :         : 
+    * @param       argN description du Neme argument 
+    * @exception   Exception1  description de la première exception 
+    *    :           :         : 
+    * @exception ExceptionN  description de la Neme exception 
+    * 
+    * @see UneAutreClasse#UneAutreMethode 
+    * @author   Jean Dupond 
+    **/
 
 - Les commentaire sure une ligne (donc pas en fin de ligne) : 
     /* commentaires utiles au code */
         
 - Les commentaire en fin de ligne
     i++;         // commentaires utiles au code
-
 - Une seule declaration par ligne 
     String nom;
     String prenom;
-    
+
 - Exemple de declaration de class
     class Employe extends Personne {
         int matricule;
