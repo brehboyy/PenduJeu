@@ -11,7 +11,10 @@ git push -u origin master
 
 #PENDUJEU
 
+- Utilisation  de SRP (single responsibility principle) du principe SOLID : une classe, une fonction ou une méthode doit avoir une et une seule responsabilité
+
 Convention de nommage : 
+
 - Nom des classes : MaClasse
 - Commentaire de debut de classes :
 '''java
@@ -44,6 +47,8 @@ Convention de nommage :
     *  Description de la methode
     */
 
+Commentaires :
+
 - Commentaire des methodes
     public void maMethode() {
     /** 
@@ -62,16 +67,18 @@ Convention de nommage :
     * @author   Jean Dupond 
     **/
 
-- Les commentaire sure une ligne (donc pas en fin de ligne) : 
+- Les commentaire sur une ligne (donc pas en fin de ligne) : 
     /* commentaires utiles au code */
         
-- Les commentaire en fin de ligne
+- Les commentaires en fin de ligne
     i++;         // commentaires utiles au code
 - Une seule declaration par ligne 
     String nom;
     String prenom;
 
-- Exemple de declaration de class
+- Les commentaires à l'intérieur des méthodes ne doivent pas être trop nombreuses car sinon cela signifie que le code est trop compliqué
+
+- Exemple de declaration de classe
     class Employe extends Personne {
         int matricule;
         Employee() {
@@ -84,4 +91,26 @@ Convention de nommage :
             this.matricule = matricule;
         }
     }
+    
+Git :
+
+La master est la branche réservé à la livraison.
+La develop est la branche depuis laquelle les autres branches sont tirées et dans laquelle elles sont mergées.
+
+Pour chaque fonctionnalité et chaque ano, on fait une branche
+Le nom des branches correspond à la fonctionnalité développée, qu’elle concerne une US ou bien une correction d’anomalie.
+- Nom des branches :
+    - si c'est une fonctionnalité : fb-nomjira
+    - si c'est une correction ano : hf-nomjira
+
+- Message de commit :
+    - Chaque message de commit doit respecter un pattern particulier :
+        - Débute par :    
+            [TECH] :  Lors d'un commit lié simplement à une tâche technique
+            [ANO]  :  Lors d'un commit lié à une anomalie
+            [EVO]  :  Lors d'un commit lié à une évolution
+        [TECH/ANO/EVO][NuméroDuJira(JDP-10 par exemple)] NomDuJira - explications complémentaires
+Les commits doivent être de taille normale.
+Les messages de commit sont importants
+
     
