@@ -9,32 +9,25 @@ git push -u origin master
 git remote add origin https://github.com/brehboyy/PenduJeu.git
 git push -u origin master
 
+#PENDUJEU
 
 Convention de nommage : 
-- Nom des class : MaClasse
-- Commentaire de debut de class :
+- Nom des classes : MaClasse
+- Commentaire de debut de classes :
+'''java
+/**
+* Nom de classe : MaClasse
+*
+* Description   : description de la classe et de son rôle 
+*
+* Version       : 1.0
+*
+* Date          : 23/02/2001
+* 
+* Copyright     : moi
+*/
+'''
 
-    /**
-    * Nom de classe : MaClasse
-    *
-    * Description   : description de la classe et de son rôle 
-    *
-    * Version       : 1.0
-    *
-    * Date          : 23/02/2001
-    * 
-    * Copyright     : moi
-    */
-    
-    /**
-    * description de la classe.
-    * explication supplémentaire si nécessaire
-    * 
-    * @version 1.0
-    *
-    * @see UneAutreClasse
-    * @author Jean Michel D.
-    */
 
 - Nom des package : Tout minuscule "monpackage"
 
