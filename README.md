@@ -97,7 +97,8 @@ Git :
 La master est la branche réservé à la livraison.
 La develop est la branche depuis laquelle les autres branches sont tirées et dans laquelle elles sont mergées.
 
-Pour chaque fonctionnalité et chaque ano, on fait une branche
+Pour chaque fonctionnalité et chaque ano, on fait une branche qui part de la develop.
+Avant chaque création de branche, faire un pull pour être à jour.
 Le nom des branches correspond à la fonctionnalité développée, qu’elle concerne une US ou bien une correction d’anomalie.
 - Nom des branches :
     - si c'est une fonctionnalité : fb-nomjira
@@ -112,5 +113,7 @@ Le nom des branches correspond à la fonctionnalité développée, qu’elle con
         [TECH/ANO/EVO][NuméroDuJira(JDP-10 par exemple)] NomDuJira - explications complémentaires
 Les commits doivent être de taille normale.
 Les messages de commit sont importants
+
+Pull Request : Pour merger une branche de feuture ou d'ano sur la develop il faut faire une pull request qui sera ensuite validé par un autre memebre du projet
 
     
