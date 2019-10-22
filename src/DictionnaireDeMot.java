@@ -1,8 +1,12 @@
+import static org.junit.Assert.assertEquals;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
+
+import org.junit.*;
 
 /**
  * Classe contenant le dictionnaire de mot du pendu
@@ -26,7 +30,7 @@ public class DictionnaireDeMot {
 	 */
 	public DictionnaireDeMot() {
 		try {
-			InputStream flux = new FileInputStream("liste_francais.txt");
+			InputStream flux = new FileInputStream("test.txt");
 			InputStreamReader lecture = new InputStreamReader(flux, "UTF-8");
 			BufferedReader buff = new BufferedReader(lecture);
 			String ligne;
@@ -34,7 +38,6 @@ public class DictionnaireDeMot {
 			while ((ligne = buff.readLine()) != null) {
 				listMots.add(ligne);
 			}
-			System.out.println(this.listMots.size());
 			buff.close();
 		} catch (Exception e) {
 			System.out.println(e.toString());
@@ -132,12 +135,16 @@ public class DictionnaireDeMot {
 		return listMotsFacile.get(indexAlea);
 	}
 	
-public static void main(String[] args) {
-		
-		DictionnaireDeMot ddm = new DictionnaireDeMot();
-		System.out.println(ddm.versMinuscule(ddm.getMotDur()));
-		System.out.println(ddm.versMinuscule(ddm.getMotFacile()));
-		
+	
+	@Test
+	public void testGetMotFacile() {
+		assertEquals(getMotFacile(), "foch");
 	}
+	
+	@Test
+	public void testGetMotDur() {
+		assertEquals(getMotDur(), "publication");
+	}
+	
 
 }
