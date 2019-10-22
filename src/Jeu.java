@@ -15,19 +15,18 @@ public class Jeu {
 		int dif = menu.accueil();
 		
 		String mot = "";
-		
+		DictionnaireDeMot dic = new DictionnaireDeMot();
 		if(dif == 1) 
 		{
 			System.out.println("Vous êtes en mode débutant");
-			//mot =
+			mot = dic.getMotFacile();
 		}
 		else if (dif == 2)
 		{
 			System.out.println("Vous êtes en mode avancé");
-			//mot =
+			mot = dic.getMotDur();
 		}
 		
-		mot ="lettre";
 		VerificationLettre(mot);
 	
 	}
@@ -49,11 +48,9 @@ public class Jeu {
 		while( motBon == false && essai < 10)
 		{
 			String lettre = menu.choixLettre();
-			if(mot.contains(lettre)) {
-				
-				System.out.println("Bonne lettre nb " +  mot.chars().filter(ch -> ch == lettre.charAt(0)).count());
+			if(mot.contains(lettre)) {		
+				System.out.println("Bonne lettre");
 				nbLettreBonne += mot.chars().filter(ch -> ch == lettre.charAt(0)).count();
-				System.out.println(nbLettreBonne);				
 				if(nbLettreBonne >= nbLettreMot) {
 					motBon = true;
 				}
