@@ -10,12 +10,12 @@ public class Jeu {
 	 * @see LancerJeuy
 	 * @author Mael Veron
 	 */
-	public void LancerJeu() 
+	public void lancerJeu() 
 	{	
 		int dif = menu.accueil();
 		
 		String mot = "";
-		DictionnaireDeMot dic = new DictionnaireDeMot("test.txt");
+		DictionnaireDeMot dic = new DictionnaireDeMot("");
 		if(dif == 1) 
 		{
 			System.out.println("Vous êtes en mode débutant");
@@ -27,7 +27,7 @@ public class Jeu {
 			mot = dic.getMotDur();
 		}
 		
-		VerificationLettre(mot);
+		verificationLettre(mot);
 	
 	}
 	
@@ -38,7 +38,7 @@ public class Jeu {
 	 * @author Mael Veron
 	 * @param String mot le mot généré
 	 */
-	public void VerificationLettre(String mot) 
+	public void verificationLettre(String mot) 
 	{
 		int essai = 0;
 		boolean motBon = false;
@@ -69,4 +69,5 @@ public class Jeu {
 			System.out.println("Vous vous êtes trompé, dommage...");
 		}
 	}
+
 }
