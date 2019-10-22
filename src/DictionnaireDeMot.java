@@ -30,7 +30,7 @@ public class DictionnaireDeMot {
 			InputStreamReader lecture = new InputStreamReader(flux, "UTF-8");
 			BufferedReader buff = new BufferedReader(lecture);
 			String ligne;
-			this.listMots = new ArrayList();
+			this.listMots = new ArrayList<String>();
 			while ((ligne = buff.readLine()) != null) {
 				listMots.add(ligne);
 			}
