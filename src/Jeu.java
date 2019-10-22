@@ -15,7 +15,7 @@ public class Jeu {
 		int dif = menu.accueil();
 		
 		String mot = "";
-		DictionnaireDeMot dic = new DictionnaireDeMot();
+		DictionnaireDeMot dic = new DictionnaireDeMot("test.txt");
 		if(dif == 1) 
 		{
 			System.out.println("Vous êtes en mode débutant");
