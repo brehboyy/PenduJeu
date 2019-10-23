@@ -42,40 +42,52 @@ public class Menu {
             }
         }
         return number;
-	}
-	
-	public DictionnaireDeMotFactory.Type demandeEndroitDictionnaire() 
-	{
-		Scanner console = new Scanner(System.in);
-		System.out.println("Veuillez selectionnez un endroit ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
-        int number = console.nextInt();
-        DictionnaireDeMotFactory.Type type;
-        if(number == 1) {
-        	type = DictionnaireDeMotFactory.Type.Liste;
-        }else {
-        	type = DictionnaireDeMotFactory.Type.Fichier;
+    }
+
+    public DictionnaireDeMotFactory.Type demandeEndroitDictionnaire()
+    {
+        System.out.println("Veuillez selectionnez un endroit ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
+        DictionnaireDeMotFactory.Type type = null;
+        boolean estUnNombre = false;
+        while (!estUnNombre) {
+            try {
+                final int number = (new Scanner(System.in)).nextInt();
+                if(number == 1 || number == 2) {
+                    estUnNombre = true;
+                    type = number == 1 ? DictionnaireDeMotFactory.Type.Liste : DictionnaireDeMotFactory.Type.Fichier;
+                }else {
+                    System.out.println("Valeur invalide ! \n Veuillez selectionnez un endroit ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
+                    estUnNombre = false;
+                }
+            }catch(InputMismatchException ex) {
+                System.out.println("Valeur invalide ! \n Veuillez selectionnez un endroit ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
+                estUnNombre = false;
+            }catch (NoSuchElementException ex){
+                System.out.println("Valeur invalide ! \n Veuillez selectionnez un endroit ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
+                estUnNombre = false;
+            }
         }
         return type;
-	}
-	
-	/** 
-	 * Affiche la phrase de choix d'une lettre
-	 *  
-	 * @see choixLettre
-	 * @author Mael Veron
-	 * @return String la lettre choisit
-	 */
-	public String choixLettre() {
-		
-		System.out.println("Veuillez choisir une lettre");
-		Scanner console = new Scanner(System.in);
-		String lettre = console.nextLine();
-		while(lettre.length() != 1 || !Character.isLetter(lettre.charAt(0))) {
-			System.out.println("Valeur invalide, entrez une seule lettre !");
-			lettre = console.nextLine();
-		}
-		return lettre;
-	}
-	
-	
+    }
+
+    /**
+     * Affiche la phrase de choix d'une lettre
+     *
+     * @see choixLettre
+     * @author Mael Veron
+     * @return String la lettre choisit
+     */
+    public String choixLettre() {
+
+        System.out.println("\nVeuillez choisir une lettre");
+        final Scanner console = new Scanner(System.in);
+        String lettre = console.nextLine();
+        while(lettre.length() != 1 || !Character.isLetter(lettre.charAt(0))) {
+            System.out.println("Valeur invalide, entrez une seule lettre !");
+            lettre = console.nextLine();
+        }
+        return lettre;
+    }
+
+
 }

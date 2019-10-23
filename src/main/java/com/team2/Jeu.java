@@ -1,10 +1,7 @@
 package com.team2;
 
-import java.util.Arrays;
 
 public class Jeu {
-
-    Menu menu = new Menu();
 
     /**
      * Lance le jeu
@@ -13,10 +10,12 @@ public class Jeu {
      * @author Mael Veron
      */
     public void lancerJeu() {
+
+        final Menu menu = new Menu();
         final int dif = menu.accueil();
-		DictionnaireDeMotFactory.Type typeDico = menu.demandeEndroitDictionnaire();
-		String mot = "";
-		final DictionnaireDeMot dic = DictionnaireDeMotFactory.creerInstance(typeDico,"test.txt");
+        final DictionnaireDeMotFactory.Type typeDico = menu.demandeEndroitDictionnaire();
+        String mot = "";
+        final DictionnaireDeMot dic = DictionnaireDeMotFactory.creerInstance(typeDico,"test.txt");
 
 
 
@@ -48,6 +47,7 @@ public class Jeu {
      * @return reussite
      */
     public boolean verificationLettre(final String mot) {
+        final Menu menu = new Menu();
         final char[] motLettre = mot.toCharArray();
         final char[] lettreAtrouver = new char[motLettre.length];
 
@@ -73,6 +73,7 @@ public class Jeu {
             }
             reussite = estComplet(lettreAtrouver);
             affichage(lettreAtrouver);
+            System.out.println("Il vous reste " + (10-essai) +" essai(s)");
         }
         return reussite;
     }
@@ -86,7 +87,7 @@ public class Jeu {
      * @param char[] un tableau de caractere
      * @return trouve
      */
-    public boolean estComplet(final char[] LettresTrouve) {
+    public boolean estComplet(final char... LettresTrouve) {
         boolean trouve = true;
         for(final char c : LettresTrouve) {
             if(c == '_') {
@@ -106,7 +107,7 @@ public class Jeu {
      * @param char[] un tableau de caractere
      * @return boolean
      */
-    public boolean estDansMot(char lettre, char[] motTab) {
+    public boolean estDansMot(final char lettre, final char... motTab) {
         return new String(motTab).contains(lettre + "");
     }
 
@@ -117,11 +118,11 @@ public class Jeu {
      * @author Mael Veron
      * @param char[] lettreAtrouver
      */
-    public void affichage(char[] lettreAtrouver) {
-        String affichage = "";
+    public void affichage(final char... lettreAtrouver) {
+        final StringBuilder affichage = new StringBuilder();
         for (int i = 0; i < lettreAtrouver.length; i++) {
-            affichage += lettreAtrouver[i] + " ";
+            affichage.append(lettreAtrouver[i] + " ");
         }
-        System.out.println(affichage);
+        System.out.println(affichage.toString());
     }
 }

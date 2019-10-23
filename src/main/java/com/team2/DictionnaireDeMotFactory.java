@@ -2,30 +2,30 @@ package com.team2;
 
 public class DictionnaireDeMotFactory {
 
-	public enum Type {
-		Liste,
-		Fichier;
-	}
+    public enum Type {
+        Liste,
+        Fichier;
+    }
 
 
-	public static DictionnaireDeMot creerInstance(Type type, String texte) {
-		DictionnaireDeMot result = null;
+    public static DictionnaireDeMot creerInstance(final Type type, final String texte) {
+        DictionnaireDeMot result = null;
 
-		switch (type) {
-		case Liste:
-			result = new ListeDictionnaireDeMot();
-			result.RemplirListe("");
-			break;
+        switch (type) {
+        case Liste:
+            result = new ListeDictionnaireDeMot();
+            result.RemplirListe("");
+            break;
 
-		case Fichier:
-			result = new FichierDictionnaireDeMot();
-			result.RemplirListe(texte);
-			break;
+        case Fichier:
+            result = new FichierDictionnaireDeMot();
+            result.RemplirListe(texte);
+            break;
 
-		default:
-			break;
-		}
+        default:
+            break;
+        }
 
-		return result;
-	}
+        return result;
+    }
 }

@@ -118,6 +118,8 @@ public class DessinPendu {
             System.out.println("_|____________\n");
             System.out.println("La suicide squad ta eu !\n");
             break;
+            default:
+                break;
         }
     }
 
