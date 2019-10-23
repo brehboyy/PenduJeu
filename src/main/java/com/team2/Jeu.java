@@ -59,6 +59,7 @@ public class Jeu {
 		int essai = 0;
 		boolean reussite = false;
 		boolean temp = false;
+		affichage(lettreAtrouver);
 		
 		while(reussite == false && essai < 10)
 		{
@@ -81,14 +82,25 @@ public class Jeu {
 				reussite = true;
 			}
 			
-			String affichage ="";
-			for(int i = 0; i < lettreAtrouver.length; i++) 
-			{
-				affichage += lettreAtrouver[i] + " ";
-			}
-			System.out.println(affichage);
+			affichage(lettreAtrouver);
 			essai++;			
 		}		
 		return reussite;
+	}
+	
+	/** 
+	 * Affiche les lettres
+	 *  
+	 * @see affichage
+	 * @author Mael Veron
+	 * @param char[] lettreAtrouver
+	 */
+	public void affichage(char[] lettreAtrouver) {
+		String affichage ="";
+		for(int i = 0; i < lettreAtrouver.length; i++) 
+		{
+			affichage += lettreAtrouver[i] + " ";
+		}
+		System.out.println(affichage);
 	}
 }
