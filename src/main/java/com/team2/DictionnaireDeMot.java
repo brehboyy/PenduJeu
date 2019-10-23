@@ -111,7 +111,7 @@ public class DictionnaireDeMot {
 				  .collect(Collectors.toList());
 		
 		int indexAlea = new Random().nextInt(listMotsDur.size());
-		return listMotsDur.get(indexAlea);
+		return this.versMinuscule(listMotsDur.get(indexAlea));
 	}
 	
 	/**
@@ -130,6 +130,6 @@ public class DictionnaireDeMot {
 				  .collect(Collectors.toList());
 		
 		int indexAlea = new Random().nextInt(listMotsFacile.size());
-		return listMotsFacile.get(indexAlea);
+		return this.versMinuscule(listMotsFacile.get(indexAlea));
 	}
 }
