@@ -1,3 +1,5 @@
+package com.team2;
+
 /**
  * 
  * Cette classe va permettre d'afficher au fur et a mesure les differentes etapes du pendu 
