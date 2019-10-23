@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 import com.sun.xml.internal.ws.util.StringUtils;
 
 public class Jeu {
@@ -47,29 +49,45 @@ public class Jeu {
 	 */
 	public boolean verificationLettre(String mot) 
 	{
+		char[] motLettre = mot.toCharArray();
+		char[] lettreAtrouver = new char[motLettre.length];
+		
+		for(int i = 0; i < motLettre.length; i++) {
+			lettreAtrouver[i] = '_';
+		}
+	
 		int essai = 0;
 		boolean reussite = false;
-		int nbLettreMot = mot.length();
-		int nbLettreBonne = 0;
-		System.out.println(nbLettreMot);
-		while( reussite == false && essai < 10)
+		boolean temp = false;
+		
+		while(reussite == false && essai < 10)
 		{
-			String lettre = menu.choixLettre();
-			if(mot.contains(lettre)) {		
-				System.out.println("Bonne lettre");
-				nbLettreBonne += mot.chars().filter(ch -> ch == lettre.charAt(0)).count();
-				if(nbLettreBonne >= nbLettreMot) {
-					reussite = true;
+			char lettre = menu.choixLettre().charAt(0);
+			for(int i = 0; i < motLettre.length; i++)
+			{
+				temp = false;
+				if(motLettre[i] == lettre) 
+				{
+					lettreAtrouver[i] = lettre;						
+				}
+				
+				else if(lettreAtrouver[i] == '_') 
+				{
+					temp = true;
 				}
 			}
-			else
+			
+			System.out.println(temp);
+			if(temp == false) 
 			{
-				System.out.println("Mauvaise lettre");
+				reussite = true;
 			}
 			
+			System.out.println(lettreAtrouver);
 			essai++;
+			
 		}
-		return reussite;
 		
+		return reussite;
 	}
 }
