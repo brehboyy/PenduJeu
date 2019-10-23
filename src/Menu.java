@@ -18,7 +18,7 @@ public class Menu {
 	{		
 		Scanner console = new Scanner(System.in);
 		System.out.println("Bonjour et bienvenue sur le jeu du pendu de la Suicide Squad");
-		System.out.println("Veuillez selectionnez un niveau de difficulte entre 1 (debutant) et 2 (avancé) :");
+		System.out.println("Veuillez selectionnez un niveau de difficulte entre 1 (debutant) et 2 (avance) :");
         int number = console.nextInt();
   
         return number;

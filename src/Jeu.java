@@ -7,10 +7,10 @@ public class Jeu {
 	/** 
 	 * Lance le jeu
 	 *  
-	 * @see LancerJeuy
+	 * @see LancerJeu
 	 * @author Mael Veron
 	 */
-	public void LancerJeu() 
+	public void lancerJeu() 
 	{	
 		int dif = menu.accueil();
 		
@@ -18,21 +18,23 @@ public class Jeu {
 		DictionnaireDeMot dic = new DictionnaireDeMot("test.txt");
 		if(dif == 1) 
 		{
-			System.out.println("Vous �tes en mode d�butant");
+			System.out.println("Vous etes en mode debutant");
 			mot = dic.getMotFacile();
 		}
 		else if (dif == 2)
 		{
-			System.out.println("Vous �tes en mode avanc�");
+			System.out.println("Vous etes en mode avance");
 			mot = dic.getMotDur();
 		}
 		
 		
-		if(VerificationLettre(mot) == true) {
-			System.out.println("Vous avez trouver le bon mot, f�licitations !!");
+		if(verificationLettre(mot) == true) {
+			System.out.println("Vous avez trouver le bon mot, felicitations !!");
 		}else {
-			System.out.println("Vous vous �tes tromp�, dommage...");
+			System.out.println("Vous vous etes trompe, dommage...");
 		}
+		
+		System.out.println("Le mot etait " + mot);
 	}
 	
 	/** 
@@ -43,7 +45,7 @@ public class Jeu {
 	 * @param String mot le mot g�n�r�
 	 * @return reussite
 	 */
-	public boolean VerificationLettre(String mot) 
+	public boolean verificationLettre(String mot) 
 	{
 		int essai = 0;
 		boolean reussite = false;
