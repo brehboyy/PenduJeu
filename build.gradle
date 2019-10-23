@@ -3,10 +3,14 @@ plugins {
     id 'java'
     id 'eclipse'
     id 'pmd'
+    id 'jacoco'
+    id 'checkstyle'
 }
 
 ext {
 	pmdVersion = '6.8.0'
+	jacocoVersion = '0.7.5.201505241946'
+	checkstyleVersion = '6.16.1'
 }
 
 repositories {
@@ -31,4 +35,21 @@ tasks.withType(Pmd){
 		xml.enabled true
 		html.enabled true
 	}
+}
+
+jacoco {
+	toolVersion = jacocoVersion
+}
+
+jacocoTestReport {
+	reports{
+		xml.enabled = true
+		html.enabled = true
+		csv.enabled = true
+	}
+}
+
+checkstyle {
+	toolVersion = checkstyleVersion
+	 config = rootProject.resources.text.fromFile('etc/checkstyle/regles.xml')
 }

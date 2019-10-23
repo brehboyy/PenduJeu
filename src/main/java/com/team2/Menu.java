@@ -1,5 +1,7 @@
 package com.team2;
 
+import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Menu {
@@ -18,11 +20,27 @@ public class Menu {
 	 */
 	public int accueil() 
 	{		
-		Scanner console = new Scanner(System.in);
 		System.out.println("Bonjour et bienvenue sur le jeu du pendu de la Suicide Squad");
 		System.out.println("Veuillez selectionnez un niveau de difficulte entre 1 (debutant) et 2 (avance) :");
-        int number = console.nextInt();
-  
+		boolean estUnNombre = false;
+		int number = 0;
+		while (!estUnNombre) {
+			try {
+				number = (new Scanner(System.in)).nextInt();
+				if(number == 1 || number == 2) {
+					estUnNombre = true;
+				}else {
+					System.out.println("Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte entre 1 (debutant) et 2 (avance) :");
+					estUnNombre = false;
+				}
+			}catch(InputMismatchException ex) {
+				System.out.println("Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte entre 1 (debutant) et 2 (avance) :");
+				estUnNombre = false;
+			}catch (NoSuchElementException ex){
+				System.out.println("Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte entre 1 (debutant) et 2 (avance) :");
+				estUnNombre = false;
+			}
+		}
         return number;
 	}
 	

@@ -30,34 +30,27 @@ public class Tests {
 		assertEquals(ddm.getMotDur(), "publication");
 	}
 	
-	/* TEST Menu */
-	
-	@Test //return true
-	public void testchoixLettreA() {
-		Menu mnu = new Menu();
-		assertEquals(mnu.choixLettre(), "a");
+	@Test
+	public void testequalTabTrue() {
+		Jeu jeu = new Jeu();
+		assertEquals(jeu.estComplet(new char[] {'a', 'b',  'c'}), true);
 	}
 	
-	@Test //return error
-	public void testchoixLettreB() {
-		Menu mnu = new Menu();
-		assertEquals(mnu.choixLettre(), "c");
+	@Test
+	public void testequalTabFalse() {
+		Jeu jeu = new Jeu();
+		assertEquals(jeu.estComplet(new char[] {'a', 'b',  '_'}), false);
 	}
 	
-	
-	@Test //return true
-	public void testaccueil1() {
-		Menu mnu = new Menu();
-		assertEquals(mnu.accueil(), 1);
+	@Test
+	public void testestDansMotTrue() {
+		Jeu jeu = new Jeu();
+		assertEquals(jeu.estDansMot('c',new char[] {'a', 'b',  'c'}), true);
 	}
 	
-	@Test //return true
-	public void testaccueil2() {
-		Menu mnu = new Menu();
-		assertEquals(mnu.accueil(), 2);
+	@Test
+	public void testestDansMotFalse() {
+		Jeu jeu = new Jeu();
+		assertEquals(jeu.estDansMot('z',new char[] {'a', 'b',  'c'}), false);
 	}
-	
-	
-	
-
 }
