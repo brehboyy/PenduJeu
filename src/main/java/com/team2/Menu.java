@@ -1,5 +1,8 @@
 package com.team2;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -44,6 +47,34 @@ public class Menu {
         return number;
     }
 
+    /**
+     * Demandele nom du fichier
+     *
+     * @see demandeNomFichier
+     * @author Mael Veron
+     * @return Stirng le nom du fichier
+     */
+    public String demandeNomFichier()
+    {
+    	 System.out.println("Choississez le nom du fichier :");
+         final Scanner console = new Scanner(System.in);
+         String nomFichier = console.nextLine();
+         File f = new File(nomFichier);
+         while(!f.exists()) {
+        	 System.out.println("Le fichier n'existe pas, rentrez en un autre :");
+        	 nomFichier = console.nextLine();
+        	 f= new File(nomFichier);
+         }
+         return nomFichier;
+    }
+
+    /**
+     * Demande quel dictionnaire
+     *
+     * @see demandeEndroitDictionnaire
+     * @author Mael Veron
+     * @return DictionnaireDeMotFactory.Type le type choisit
+     */
     public DictionnaireDeMotFactory.Type demandeEndroitDictionnaire()
     {
         System.out.println("Veuillez selectionnez un endroit ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
@@ -88,6 +119,4 @@ public class Menu {
         }
         return lettre;
     }
-
-
 }
