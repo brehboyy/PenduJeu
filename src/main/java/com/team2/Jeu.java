@@ -8,16 +8,20 @@ public class Jeu {
 
 	/**
 	 * Lance le jeu
-	 * 
+	 *
 	 * @see LancerJeu
 	 * @author Mael Veron
 	 */
-	public void lancerJeu() {
+	public void lancerJeu()
+	{
 		int dif = menu.accueil();
 
+		DictionnaireDeMotFactory.Type typeDico = menu.demandeEndroitDictionnaire();
+
 		String mot = "";
-		DictionnaireDeMot dic = new DictionnaireDeMot("test.txt");
-		if (dif == 1) {
+		DictionnaireDeMot dic = DictionnaireDeMotFactory.creerInstance(typeDico,"test.txt");
+		if(dif == 1)
+		{
 			System.out.println("Vous etes en mode debutant\n");
 			mot = dic.getMotFacile();
 		} else if (dif == 2) {
