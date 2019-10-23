@@ -29,35 +29,4 @@ public class Tests {
 		DictionnaireDeMot ddm = new DictionnaireDeMot("test.txt");
 		assertEquals(ddm.getMotDur(), "publication");
 	}
-	
-	/* TEST Menu */
-	
-	@Test //return true
-	public void testchoixLettreA() {
-		Menu mnu = new Menu();
-		assertEquals(mnu.choixLettre(), "a");
-	}
-	
-	@Test //return error
-	public void testchoixLettreB() {
-		Menu mnu = new Menu();
-		assertEquals(mnu.choixLettre(), "c");
-	}
-	
-	
-	@Test //return true
-	public void testaccueil1() {
-		Menu mnu = new Menu();
-		assertEquals(mnu.accueil(), 1);
-	}
-	
-	@Test //return true
-	public void testaccueil2() {
-		Menu mnu = new Menu();
-		assertEquals(mnu.accueil(), 2);
-	}
-	
-	
-	
-
 }
