@@ -2,6 +2,11 @@
 plugins {
     id 'java'
     id 'eclipse'
+    id 'pmd'
+}
+
+ext {
+	pmdVersion = '6.8.0'
 }
 
 repositories {
@@ -14,3 +19,16 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
+pmd {
+  pmdTest.enabled = false
+  toolVersion = pmdVersion
+  ruleSetConfig = rootProject.resources.text.fromFile('config/pmd/reglesEnsembles.xml')
+  ignoreFailures = true
+}
+
+tasks.withType(Pmd){
+	reports{
+		xml.enable true
+		html.enable true
+	}
+}
