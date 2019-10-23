@@ -1,9 +1,9 @@
 package com.team2;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-import java.io.IOException;
-
-import org.junit.*;
+import org.junit.Test;
 
 /**
  *
@@ -16,7 +16,6 @@ import org.junit.*;
  */
 public class Tests {
 
-	/* TEST DictionaireDeMot */
 
 	@Test
 	public void testGetMotFacile() {
