@@ -1,3 +1,5 @@
+package com.team2;
+
 import java.util.Scanner;
 
 public class Menu {
