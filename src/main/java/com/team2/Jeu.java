@@ -15,10 +15,13 @@ public class Jeu {
         final int dif = menu.accueil();
         final DictionnaireDeMotFactory.Type typeDico = menu.demandeEndroitDictionnaire();
         String mot = "";
-        final DictionnaireDeMot dic = DictionnaireDeMotFactory.creerInstance(typeDico,"test.txt");
 
+        String nomFichier="";
+        if(typeDico == DictionnaireDeMotFactory.Type.Fichier) {
+        	nomFichier = menu.demandeNomFichier();
+        }
 
-
+        final DictionnaireDeMot dic = DictionnaireDeMotFactory.creerInstance(typeDico, nomFichier);
 
         if (dif == 1) {
             System.out.println("Vous etes en mode debutant\n");
