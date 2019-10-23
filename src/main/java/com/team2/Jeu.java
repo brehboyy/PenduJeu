@@ -20,12 +20,12 @@ public class Jeu {
 		DictionnaireDeMot dic = new DictionnaireDeMot("test.txt");
 		if(dif == 1) 
 		{
-			System.out.println("Vous etes en mode debutant");
+			System.out.println("Vous etes en mode debutant\n");
 			mot = dic.getMotFacile();
 		}
 		else if (dif == 2)
 		{
-			System.out.println("Vous etes en mode avance");
+			System.out.println("Vous etes en mode avance\n");
 			mot = dic.getMotDur();
 		}
 		
@@ -40,11 +40,11 @@ public class Jeu {
 	}
 	
 	/** 
-	 * V�rifie les lettres dans le mot
+	 * Verifie les lettres dans le mot
 	 *  
 	 * @see VerificationLettre
 	 * @author Mael Veron
-	 * @param String mot le mot g�n�r�
+	 * @param String mot le mot genere
 	 * @return reussite
 	 */
 	public boolean verificationLettre(String mot) 
@@ -76,18 +76,19 @@ public class Jeu {
 					temp = true;
 				}
 			}
-			
-			System.out.println(temp);
 			if(temp == false) 
 			{
 				reussite = true;
 			}
 			
-			System.out.println(lettreAtrouver);
-			essai++;
-			
-		}
-		
+			String affichage ="";
+			for(int i = 0; i < lettreAtrouver.length; i++) 
+			{
+				affichage += lettreAtrouver[i] + " ";
+			}
+			System.out.println(affichage);
+			essai++;			
+		}		
 		return reussite;
 	}
 }

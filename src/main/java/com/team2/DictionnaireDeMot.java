@@ -20,7 +20,7 @@ public class DictionnaireDeMot {
 	public ArrayList<String> listMots;
 
 	/**
-	 * Chargement des mots a partir d'un fichier cotenant une multitude de mots vers
+	 * Chargement des mots a partir d'un fichier contenant une multitude de mots vers
 	 * un tableau de chaine de charactere
 	 * 
 	 * @see chargerMot
@@ -43,7 +43,7 @@ public class DictionnaireDeMot {
 	}
 
 	/**
-	 * Conversion des caractères d'une chaine en minuscules sans accents
+	 * Conversion des caracteres d'une chaine en minuscules sans accents
 	 * 
 	 * @param       mot : c'est le mot dont on doit ignorer les accents
 	 * 
