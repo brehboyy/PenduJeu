@@ -44,6 +44,20 @@ public class Menu {
         return number;
 	}
 	
+	public DictionnaireDeMotFactory.Type demandeEndroitDictionnaire() 
+	{
+		Scanner console = new Scanner(System.in);
+		System.out.println("Veuillez selectionnez un endroit ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
+        int number = console.nextInt();
+        DictionnaireDeMotFactory.Type type;
+        if(number == 1) {
+        	type = DictionnaireDeMotFactory.Type.Liste;
+        }else {
+        	type = DictionnaireDeMotFactory.Type.Fichier;
+        }
+        return type;
+	}
+	
 	/** 
 	 * Affiche la phrase de choix d'une lettre
 	 *  
