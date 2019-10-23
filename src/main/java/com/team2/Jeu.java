@@ -2,8 +2,6 @@ package com.team2;
 
 import java.util.Arrays;
 
-import com.sun.xml.internal.ws.util.StringUtils;
-
 public class Jeu {
 
 	Menu menu = new Menu();	
