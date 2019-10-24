@@ -1,21 +1,28 @@
 package com.team2;
-
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
-*
-* Cette classe va permettre a l'utilisateur de faire des entrer clavier
-*
-* @version 1.0
-*
-* @see DessinPendu
-* @author Ousmane Diarra
-*/
+ *
+ * Cette classe va permettre a l'utilisateur de faire des entrer clavier
+ *
+ * @version 1.0
+ *
+ * @see DessinPendu
+ * @author Ousmane Diarra
+ */
 public class Menu {
+
+    Scanner scan;
+
+    public Menu() {
+        this.scan = new Scanner(System.in);
+    }
 
     /**
      * Accueil du programme
@@ -27,30 +34,29 @@ public class Menu {
     public int accueil() {
         System.out.println("Bonjour et bienvenue sur le jeu du pendu de la Suicide Squad");
         System.out.println("Veuillez selectionnez un niveau de difficulte entre 1 (debutant) et 2 (avance) :");
+        final String messageErreur = "Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte"
+                + " entre 1 (debutant) et 2 (avance) :";
         boolean estUnNombre = false;
         int number = 0;
+        this.scan.reset();
         while (!estUnNombre) {
-
             try {
-                Scanner scan = new Scanner(System.in);
-                number = scan.nextInt();
-
-                if (number == 1 || number == 2) {
-                    estUnNombre = true;
+                if (scan.hasNextInt()) {
+                    number = this.scan.nextInt();
+                    if (number == 1 || number == 2) {
+                        estUnNombre = true;
+                    } else {
+                        System.out.println(messageErreur);
+                        estUnNombre = false;
+                    }
                 } else {
-                    System.out.println(
-                            "Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte" +
-                            " entre 1 (debutant) et 2 (avance) :");
-                    estUnNombre = false;
+                    this.scan.next();
+                    System.out.println(messageErreur);
                 }
             } catch (InputMismatchException ex) {
-                System.out.println(
-                        "Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte" +
-                        " entre 1 (debutant) et 2 (avance) :");
+                System.out.println(messageErreur);
             } catch (NoSuchElementException ex) {
-                System.out.println(
-                        "Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte" +
-                        " entre 1 (debutant) et 2 (avance) :");
+                System.out.println(messageErreur);
             }
         }
         return number;
@@ -65,13 +71,14 @@ public class Menu {
      */
     public String demandeNomFichier() {
         System.out.println("Choississez le nom du fichier :");
-        final Scanner console = new Scanner(System.in);
-        String nomFichier = console.nextLine();
-        File f = new File(nomFichier);
-        while (!f.exists()) {
+        String nomFichier = this.scan.nextLine();
+        final Path path = Paths.get(nomFichier);
+        final boolean fileExist = Files.exists(path, new LinkOption[] { LinkOption.NOFOLLOW_LINKS });
+        while (fileExist) {
             System.out.println("Le fichier n'existe pas, rentrez en un autre :");
-            nomFichier = console.nextLine();
-            f = new File(nomFichier);
+            if (this.scan.hasNext()) {
+                nomFichier = this.scan.nextLine();
+            }
         }
         return nomFichier;
     }
@@ -87,26 +94,29 @@ public class Menu {
         System.out
                 .println("Veuillez selectionnez un endroit ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
         DictionnaireDeMotFactory.Type type = null;
+        final String messageErreur = "Valeur invalide ! \n Veuillez selectionnez un endroit"
+                + " ou prendre les mots entre 1 (la liste) et 2 (le fichier) :";
         boolean estUnNombre = false;
+        this.scan.reset();
         while (!estUnNombre) {
             try {
-                final int number = new Scanner(System.in).nextInt();
-                if (number == 1 || number == 2) {
-                    estUnNombre = true;
-                    type = number == 1 ? DictionnaireDeMotFactory.Type.Liste : DictionnaireDeMotFactory.Type.Fichier;
+                if (this.scan.hasNextInt()) {
+                    final int number = this.scan.nextInt();
+                    if (number == 1 || number == 2) {
+                        estUnNombre = true;
+                        type = number == 1 ? DictionnaireDeMotFactory.Type.Liste
+                                : DictionnaireDeMotFactory.Type.Fichier;
+                    } else {
+                        System.out.println(messageErreur);
+                    }
                 } else {
-                    System.out.println(
-                            "Valeur invalide ! \n Veuillez selectionnez un endroit" +
-                            " ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
+                    this.scan.next();
+                    System.out.println(messageErreur);
                 }
             } catch (InputMismatchException ex) {
-                System.out.println(
-                        "Valeur invalide ! \n Veuillez selectionnez un endroit" +
-                        " ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
+                System.out.println(messageErreur);
             } catch (NoSuchElementException ex) {
-                System.out.println(
-                        "Valeur invalide ! \n Veuillez selectionnez un endroit" +
-                        " ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
+                System.out.println(messageErreur);
             }
         }
         return type;
@@ -122,12 +132,13 @@ public class Menu {
     public String choixLettre() {
 
         System.out.println("\nVeuillez choisir une lettre");
-        final Scanner console = new Scanner(System.in);
-        String lettre = console.nextLine();
+        this.scan.reset();
+        String lettre = this.scan.nextLine();
         while (lettre.length() != 1 || !Character.isLetter(lettre.charAt(0))) {
             System.out.println("Valeur invalide, entrez une seule lettre !");
-            lettre = console.nextLine();
+            lettre = this.scan.nextLine();
         }
+
         return lettre;
     }
 }
