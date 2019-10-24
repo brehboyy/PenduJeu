@@ -13,7 +13,7 @@ package com.team2;
 public class DessinPendu {
 
     /**
-     * Constructeur de la classe
+     * Constructeur de la classe.
      *
      * @author Mael Veron
      * @see DessinPendu
@@ -23,7 +23,7 @@ public class DessinPendu {
     }
 
     /**
-     * Dessin des partie du pendu selon l'etape
+     * Dessin des partie du pendu selon l'etape.
      *
      * @author Ousmane Diarra
      * @param etape : c'est le numero de l'etape en question
@@ -71,7 +71,7 @@ public class DessinPendu {
     }
 
     /**
-     * ceci est l'etape1
+     * ceci est l'etape1.
      *
      * @author Mael Veron
      * @see DessinPendu
@@ -86,7 +86,7 @@ public class DessinPendu {
     }
 
     /**
-     * ceci est l'etape2
+     * ceci est l'etape2.
      *
      * @author Mael Veron
      * @see DessinPendu
@@ -102,7 +102,7 @@ public class DessinPendu {
     }
 
     /**
-     * ceci est l'etape3
+     * ceci est l'etape3.
      *
      * @author Mael Veron
      * @see DessinPendu
@@ -118,7 +118,7 @@ public class DessinPendu {
     }
 
     /**
-     * ceci est l'etape4
+     * ceci est l'etape4.
      *
      * @author Mael Veron
      * @see DessinPendu
@@ -134,7 +134,7 @@ public class DessinPendu {
     }
 
     /**
-     * ceci est l'etape5
+     * ceci est l'etape5.
      *
      * @author Mael Veron
      * @see DessinPendu
@@ -150,7 +150,7 @@ public class DessinPendu {
     }
 
     /**
-     * ceci est l'etape6
+     * ceci est l'etape6.
      *
      * @author Mael Veron
      * @see DessinPendu
@@ -166,7 +166,7 @@ public class DessinPendu {
     }
 
     /**
-     * ceci est l'etape7
+     * ceci est l'etape7.
      *
      * @author Mael Veron
      * @see DessinPendu
@@ -182,7 +182,7 @@ public class DessinPendu {
     }
 
     /**
-     * ceci est l'etape8
+     * ceci est l'etape8.
      *
      * @author Mael Veron
      * @see DessinPendu
@@ -198,7 +198,7 @@ public class DessinPendu {
     }
 
     /**
-     * ceci est l'etape9
+     * ceci est l'etape9.
      *
      * @author Mael Veron
      * @see DessinPendu
@@ -214,7 +214,7 @@ public class DessinPendu {
     }
 
     /**
-     * ceci est l'etape10
+     * ceci est l'etape10.
      *
      * @author Mael Veron
      * @see DessinPendu
@@ -231,7 +231,7 @@ public class DessinPendu {
     }
 
     /**
-     * ceci est la base
+     * ceci est la base.
      *
      * @author Mael Veron
      * @see DessinPendu
@@ -241,7 +241,7 @@ public class DessinPendu {
     }
 
     /**
-     * ceci est la barreHorizontale
+     * ceci est la barreHorizontale.
      *
      * @author Mael Veron
      * @see DessinPendu
@@ -251,7 +251,7 @@ public class DessinPendu {
     }
 
     /**
-     * ceci est la barreDuHaut
+     * ceci est la barreDuHaut.
      *
      * @author Mael Veron
      * @see DessinPendu
@@ -261,7 +261,7 @@ public class DessinPendu {
     }
 
     /**
-     * ceci est la ligneTete
+     * ceci est la ligneTete.
      *
      * @author Mael Veron
      * @see DessinPendu
@@ -271,7 +271,7 @@ public class DessinPendu {
     }
 
     /**
-     * ceci est la barreHautTete
+     * ceci est la barreHautTete.
      *
      * @author Mael Veron
      * @see DessinPendu
