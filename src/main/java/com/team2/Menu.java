@@ -35,16 +35,19 @@ public class Menu {
                     estUnNombre = true;
                 } else {
                     System.out.println(
-                            "Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte entre 1 (debutant) et 2 (avance) :");
+                            "Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte" +
+                            "entre 1 (debutant) et 2 (avance) :");
                     estUnNombre = false;
                 }
             } catch (InputMismatchException ex) {
                 System.out.println(
-                        "Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte entre 1 (debutant) et 2 (avance) :");
+                        "Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte" +
+                        "entre 1 (debutant) et 2 (avance) :");
                 estUnNombre = false;
             } catch (NoSuchElementException ex) {
                 System.out.println(
-                        "Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte entre 1 (debutant) et 2 (avance) :");
+                        "Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte" +
+                        "entre 1 (debutant) et 2 (avance) :");
                 estUnNombre = false;
             }
         }
@@ -91,16 +94,19 @@ public class Menu {
                     type = number == 1 ? DictionnaireDeMotFactory.Type.Liste : DictionnaireDeMotFactory.Type.Fichier;
                 } else {
                     System.out.println(
-                            "Valeur invalide ! \n Veuillez selectionnez un endroit ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
+                            "Valeur invalide ! \n Veuillez selectionnez un endroit" +
+                            " ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
                     estUnNombre = false;
                 }
             } catch (InputMismatchException ex) {
                 System.out.println(
-                        "Valeur invalide ! \n Veuillez selectionnez un endroit ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
+                        "Valeur invalide ! \n Veuillez selectionnez un endroit" +
+                        " ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
                 estUnNombre = false;
             } catch (NoSuchElementException ex) {
                 System.out.println(
-                        "Valeur invalide ! \n Veuillez selectionnez un endroit ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
+                        "Valeur invalide ! \n Veuillez selectionnez un endroit" +
+                        " ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
                 estUnNombre = false;
             }
         }

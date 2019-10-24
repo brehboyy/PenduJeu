@@ -12,18 +12,18 @@ public class DictionnaireDeMotFactory {
         DictionnaireDeMot result = null;
 
         switch (type) {
-        case Liste:
-            result = new ListeDictionnaireDeMot();
-            result.RemplirListe("");
-            break;
+            case Liste:
+                result = new ListeDictionnaireDeMot();
+                result.RemplirListe("");
+                break;
 
-        case Fichier:
-            result = new FichierDictionnaireDeMot();
-            result.RemplirListe(texte);
-            break;
+            case Fichier:
+                result = new FichierDictionnaireDeMot();
+                result.RemplirListe(texte);
+                break;
 
-        default:
-            break;
+            default:
+                break;
         }
 
         return result;
