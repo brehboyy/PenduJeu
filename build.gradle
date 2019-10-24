@@ -5,12 +5,17 @@ plugins {
     id 'pmd'
     id 'jacoco'
     id 'checkstyle'
+    id 'findbugs'
+    id 'jdepend'
+/*    id "org.myire.quill.cpd" version "2.1"*/
 }
 
 ext {
   pmdVersion = '6.8.0'
   jacocoVersion = '0.7.5.201505241946'
   checkstyleVersion = '6.16.1'
+  FindBugsVersion = '3.0.1'
+//  cpdVersion = '6.1.0'
 }
 
 repositories {
@@ -19,10 +24,11 @@ repositories {
 
 dependencies {
     implementation 'com.google.guava:guava:28.1-jre'
-
     testImplementation 'junit:junit:4.12'
+/*    classpath "gradle.plugin.org.myire:quill:2.1"*/
 }
 
+//Plugin PMD
 pmd {
   pmdTest.enabled = false
   toolVersion = pmdVersion
@@ -37,6 +43,7 @@ tasks.withType(Pmd){
   }
 }
 
+//Plugin jacoco
 jacoco {
   toolVersion = jacocoVersion
 }
@@ -49,7 +56,54 @@ jacocoTestReport {
   }
 }
 
+//Plugin checkstyle
 checkstyle {
   toolVersion = checkstyleVersion
    config = rootProject.resources.text.fromFile('etc/checkstyle/regles.xml')
 }
+
+//Plugin FindBugs
+
+findbugs {
+    ignoreFailures = false
+    toolVersion = FindBugsVersion
+    sourceSets=[sourceSets.main]
+    excludeFilter = file('config/FindBugs/reglesFindBugs.xml')
+}
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
+}
+
+// Plugin JDepend
+
+jdepend {
+    toolVersion = '2.9.1'
+    ignoreFailures = true
+}
+
+tasks.withType(JDepend) {
+    reports {
+        text.enabled = false
+        xml.enabled = true
+    }
+}
+
+
+// Plugin cpd
+/*
+cpd {
+    language = 'cpp'
+    toolVersion = '6.1.0'
+}
+
+cpdCheck {
+    reports {
+        text.enabled = false
+        xml.enabled = true
+    }
+    source = sourceSets.main.allJava
+}
+*/
