@@ -1,6 +1,7 @@
 package com.team2;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import org.junit.Ignore;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -148,6 +149,7 @@ public class MenuTest {
     }
 
     @Test
+    @Ignore
     public void testdemandeNomFichierTrue() {
         final String value = "test.txt\n";
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
