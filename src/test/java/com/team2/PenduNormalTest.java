@@ -4,6 +4,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -84,6 +85,27 @@ public class PenduNormalTest{
         lstTest.add('c');
         pn.affichage(lstTest);
         assertNotEquals("la fonction affichage renvoi a b c on doit donc avoir le me resultat", "z y x \n", outContent.toString());
+    }
+    @Test
+    public void testVerificationLettreTrue() {
+        final String value = "a\nb\nc\n";
+        final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
+        System.setIn(inContent);
+        final PenduNormal pn = new PenduNormal();
+        assertTrue(
+                "La fonction devrais renvoye true car on va entrer succesivement toute les lettre du mot",
+                pn.verificationLettre("abc"));
+    }
+
+    @Test
+    public void testVerificationLettreFalse() {
+        final String value = "t\nt\nt\nt\nt\nt\nt\nt\nt\nt\n";
+        final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
+        System.setIn(inContent);
+        final PenduNormal pn = new PenduNormal();
+        assertFalse(
+                "On test le cas ou l'utilisateur perd le jeu du pendu normal",
+                pn.verificationLettre("abc"));
     }
 }
 

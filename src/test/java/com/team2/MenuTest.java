@@ -1,6 +1,7 @@
 package com.team2;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import org.junit.Ignore;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -8,9 +9,7 @@ import java.io.PrintStream;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.Timeout;
 
 /**
  *
@@ -147,5 +146,15 @@ public class MenuTest {
         System.setIn(inContent);
         final Menu menu = new Menu();
         assertNotEquals("Le test doit etre faux et renvoyé type normal ", DictionnaireDeMotFactory.TypeListe.Fichier, menu.demandeEndroitDictionnaire());
+    }
+
+    @Test
+    @Ignore
+    public void testdemandeNomFichierTrue() {
+        final String value = "test.txt\n";
+        final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
+        System.setIn(inContent);
+        final Menu menu = new Menu();
+        assertNotEquals("Le test doit etre faux et renvoyé type normal ", "test.txt", menu.demandeNomFichier());
     }
 }

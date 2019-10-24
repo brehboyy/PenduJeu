@@ -71,6 +71,7 @@ public class Menu {
      */
     public String demandeNomFichier() {
         System.out.println("Choississez le nom du fichier :");
+        this.scan.reset();
         String nomFichier = this.scan.nextLine();
         final Path path = Paths.get(nomFichier);
         final boolean fileExist = Files.exists(path, new LinkOption[] { LinkOption.NOFOLLOW_LINKS });

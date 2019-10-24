@@ -76,7 +76,7 @@ public final class DessinPendu {
      * @author Mael Veron
      * @see DessinPendu
      */
-    private static void etape1() {
+    public static void etape1() {
         System.out.println("\n");
         System.out.println("\n");
         System.out.println("\n");
@@ -91,7 +91,7 @@ public final class DessinPendu {
      * @author Mael Veron
      * @see DessinPendu
      */
-    private static void etape2() {
+    public static void etape2() {
         System.out.println("\n");
         barreHorizontale();
         barreHorizontale();
@@ -107,7 +107,7 @@ public final class DessinPendu {
      * @author Mael Veron
      * @see DessinPendu
      */
-    private static void etape3() {
+    public static void etape3() {
         barreDuHaut();
         barreHorizontale();
         barreHorizontale();
@@ -123,7 +123,7 @@ public final class DessinPendu {
      * @author Mael Veron
      * @see DessinPendu
      */
-    private static void etape4() {
+    public static void etape4() {
         barreDuHaut();
         System.out.println(" | /\n");
         System.out.println(" |/\n");
@@ -139,7 +139,7 @@ public final class DessinPendu {
      * @author Mael Veron
      * @see DessinPendu
      */
-    private static void etape5() {
+    public static void etape5() {
         barreDuHaut();
         barreHautTete();
         System.out.println(" |/\n");
@@ -155,7 +155,7 @@ public final class DessinPendu {
      * @author Mael Veron
      * @see DessinPendu
      */
-    private static void etape6() {
+    public static void etape6() {
         barreDuHaut();
         barreHautTete();
         ligneTete();
@@ -171,7 +171,7 @@ public final class DessinPendu {
      * @author Mael Veron
      * @see DessinPendu
      */
-    private static void etape7() {
+    public static void etape7() {
         barreDuHaut();
         barreHautTete();
         ligneTete();
@@ -187,7 +187,7 @@ public final class DessinPendu {
      * @author Mael Veron
      * @see DessinPendu
      */
-    private static void etape8() {
+    public static void etape8() {
         barreDuHaut();
         barreHautTete();
         ligneTete();
@@ -203,7 +203,7 @@ public final class DessinPendu {
      * @author Mael Veron
      * @see DessinPendu
      */
-    private static void etape9() {
+    public static void etape9() {
         barreDuHaut();
         barreHautTete();
         ligneTete();
@@ -219,7 +219,7 @@ public final class DessinPendu {
      * @author Mael Veron
      * @see DessinPendu
      */
-    private static void etape10() {
+    public static void etape10() {
         barreDuHaut();
         barreHautTete();
         ligneTete();
@@ -236,7 +236,7 @@ public final class DessinPendu {
      * @author Mael Veron
      * @see DessinPendu
      */
-    private static void base() {
+    public static void base() {
         System.out.println("_|____________\n");
     }
 
@@ -246,7 +246,7 @@ public final class DessinPendu {
      * @author Mael Veron
      * @see DessinPendu
      */
-    private static void barreHorizontale() {
+    public static void barreHorizontale() {
         System.out.println(" |\n");
     }
 
@@ -256,7 +256,7 @@ public final class DessinPendu {
      * @author Mael Veron
      * @see DessinPendu
      */
-    private static void barreDuHaut() {
+    public static void barreDuHaut() {
         System.out.println("_____________\n");
     }
 
@@ -266,7 +266,7 @@ public final class DessinPendu {
      * @author Mael Veron
      * @see DessinPendu
      */
-    private static void ligneTete() {
+    public static void ligneTete() {
         System.out.println(" |/        O\n");
     }
 
@@ -276,7 +276,7 @@ public final class DessinPendu {
      * @author Mael Veron
      * @see DessinPendu
      */
-    private static void barreHautTete() {
+    public static void barreHautTete() {
         System.out.println(" | /       |\n");
     }
 }
