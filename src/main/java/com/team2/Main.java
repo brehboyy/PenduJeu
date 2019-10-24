@@ -2,7 +2,7 @@ package com.team2;
 
 /**
 *
-* La classe principale qui va tout initialiser
+* La classe principale qui va tout initialiser.
 *
 * @version 1.0
 *
@@ -13,7 +13,7 @@ public final class Main {
 
 
     /**
-     * Constructeur de la classe
+     * Constructeur de la classe.
      *
      * @see Main
      * @author Mael Veron
@@ -24,7 +24,7 @@ public final class Main {
     }
 
     /**
-     * Point d'entr�e du programme
+     * Point d'entr�e du programme.
      *
      * @see accueil
      * @author Mael Veron

@@ -18,7 +18,7 @@ public class Jeu {
     }
 
     /**
-     * Lance le jeu
+     * Lance le jeu.
      *
      * @see LancerJeu
      * @author Mael Veron
