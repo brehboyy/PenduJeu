@@ -8,7 +8,7 @@ plugins {
 }
 
 ext {
-  pmdVersion = '4.7.0'
+  pmdVersion = '6.8.0'
   jacocoVersion = '0.7.5.201505241946'
   checkstyleVersion = '6.16.1'
 }
