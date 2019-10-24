@@ -5,17 +5,16 @@ plugins {
     id 'pmd'
     id 'jacoco'
     id 'checkstyle'
-//    id 'findbugs'
+    id "com.github.spotbugs" version "2.0.0"
     id 'jdepend'
-/*    id "org.myire.quill.cpd" version "2.1"*/
+
 }
 
 ext {
   pmdVersion = '6.8.0'
   jacocoVersion = '0.7.5.201505241946'
   checkstyleVersion = '6.16.1'
-//  FindBugsVersion = '3.0.1'
-//  cpdVersion = '6.1.0'
+  FindBugsVersion = '3.0.1'
 }
 
 repositories {
@@ -25,7 +24,8 @@ repositories {
 dependencies {
     implementation 'com.google.guava:guava:28.1-jre'
     testImplementation 'junit:junit:4.12'
-/*    classpath "gradle.plugin.org.myire:quill:2.1"*/
+    check.dependsOn 'cpd'
+    compile 'com.google.code.findbugs:annotations:3.0.0'
 }
 
 //Plugin PMD
@@ -76,34 +76,45 @@ tasks.withType(JDepend) {
     }
 }
 
-//Plugin FindBugs
-/*
-findbugs {
-    ignoreFailures = false
-    toolVersion = FindBugsVersion
-    sourceSets=[sourceSets.main]
-    excludeFilter = file('config/FindBugs/reglesFindBugs.xml')
+//Plugin SpotBugs
+
+spotbugs {
+    toolVersion '3.1.12'
+    spotbugsTest.enabled = false
+    ignoreFailures = true
+    effort = "max"
+    reportLevel = "high"
 }
-tasks.withType(FindBugs) {
+tasks.withType(com.github.spotbugs.SpotBugsTask) {
     reports {
         xml.enabled true
         html.enabled false
     }
 }
-*/
+
 
 // Plugin cpd
-/*
-cpd {
-    language = 'cpp'
-    toolVersion = '6.1.0'
+
+task cpd {
+    doLast {
+        def cpdOutputDir = new File("build/reports/cpd")
+        cpdOutputDir.mkdirs()
+
+        ant.taskdef(name: 'cpd', classname: 'net.sourceforge.pmd.cpd.CPDTask', classpath: configurations.pmd.asPath)
+
+        ant.cpd(minimumTokenCount: '100', format: 'xml', outputFile: new File(cpdOutputDir, 'cpd.xml')) {
+            fileset(dir: 'src') {
+                include(name: '/*.java')
+            }
+        }
+    }
 }
 
-cpdCheck {
-    reports {
-        text.enabled = false
-        xml.enabled = true
-    }
+//Javadoc
+
+javadoc {
     source = sourceSets.main.allJava
+    classpath = configurations.compile
+    failOnError = false
 }
-*/
+
