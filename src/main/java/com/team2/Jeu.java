@@ -12,6 +12,11 @@ import java.text.Collator;
 * @author Mael Verron
 */
 public class Jeu {
+    final private Menu menu;
+
+    public Jeu() {
+        this.menu = new Menu();
+    }
 
     /**
      * Lance le jeu
@@ -20,8 +25,6 @@ public class Jeu {
      * @author Mael Veron
      */
     public void lancerJeu() {
-
-        final Menu menu = new Menu();
         final int dif = menu.accueil();
         final DictionnaireDeMotFactory.Type typeDico = menu.demandeEndroitDictionnaire();
         String nomFichier="";
@@ -54,10 +57,8 @@ public class Jeu {
      * @return reussite
      */
     public boolean verificationLettre(final String mot) {
-        final Menu menu = new Menu();
         final char[] motLettre = mot.toCharArray();
         final char[] lettreAtrouver = new char[motLettre.length];
-
         for (int i = 0; i < motLettre.length; i++) {
             lettreAtrouver[i] = '_';
         }
