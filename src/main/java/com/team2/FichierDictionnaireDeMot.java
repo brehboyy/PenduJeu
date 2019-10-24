@@ -19,11 +19,11 @@ public class FichierDictionnaireDeMot implements DictionnaireDeMot {
 
     public List<String> listMots;
 
-    public void RemplirListe(String nomFichier) {
+    public void RemplirListe(final String nomFichier) {
         try {
-            InputStream flux = new FileInputStream(nomFichier);
-            InputStreamReader lecture = new InputStreamReader(flux, "UTF-8");
-            BufferedReader buff = new BufferedReader(lecture);
+            final InputStream flux = new FileInputStream(nomFichier);
+            final InputStreamReader lecture = new InputStreamReader(flux, "UTF-8");
+            final BufferedReader buff = new BufferedReader(lecture);
             String ligne;
             this.listMots = new ArrayList<String>();
             while ((ligne = buff.readLine()) != null) {
