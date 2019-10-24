@@ -20,104 +20,99 @@ public class DessinPendu {
      */
     public static void afficherEtapesPerdu(final int etape) {
         switch(etape) {
-        case 0:
-            System.out.println("\n");
-            System.out.println("\n");
-            System.out.println("\n");
-            System.out.println("\n");
-            System.out.println("\n");
-            System.out.println("\n");
-            break;
-        case 1:
-            System.out.println("\n");
-            System.out.println("\n");
-            System.out.println("\n");
-            System.out.println("\n");
-            System.out.println("\n");
-            System.out.println("_____________\n");
-            break;
-        case 2:
-            System.out.println("\n");
-            System.out.println(" |\n");
-            System.out.println(" |\n");
-            System.out.println(" |\n");
-            System.out.println(" |\n");
-            System.out.println(" |\n");
-            System.out.println("_|____________\n");
-            break;
-        case 3:
-            System.out.println("_____________\n");
-            System.out.println(" |\n");
-            System.out.println(" |\n");
-            System.out.println(" |\n");
-            System.out.println(" |\n");
-            System.out.println(" |\n");
-            System.out.println("_|____________\n");
-            break;
-        case 4:
-            System.out.println("_____________\n");
-            System.out.println(" | /\n");
-            System.out.println(" |/\n");
-            System.out.println(" |\n");
-            System.out.println(" |\n");
-            System.out.println(" |\n");
-            System.out.println("_|____________\n");
-            break;
-        case 5:
-            System.out.println("_____________\n");
-            System.out.println(" | /       |\n");
-            System.out.println(" |/\n");
-            System.out.println(" |\n");
-            System.out.println(" |\n");
-            System.out.println(" |\n");
-            System.out.println("_|____________\n");
-            break;
-        case 6:
-            System.out.println("_____________\n");
-            System.out.println(" | /       |\n");
-            System.out.println(" |/        O\n");
-            System.out.println(" |\n");
-            System.out.println(" |\n");
-            System.out.println(" |\n");
-            System.out.println("_|____________\n");
-            break;
-        case 7:
-            System.out.println("_____________\n");
-            System.out.println(" | /       |\n");
-            System.out.println(" |/        O\n");
-            System.out.println(" |         |\n");
-            System.out.println(" |\n");
-            System.out.println(" |\n");
-            System.out.println("_|____________\n");
-            break;
-        case 8:
-            System.out.println("_____________\n");
-            System.out.println(" | /       |\n");
-            System.out.println(" |/        O\n");
-            System.out.println(" |        -|-\n");
-            System.out.println(" |\n");
-            System.out.println(" |\n");
-            System.out.println("_|____________\n");
-            break;
-        case 9:
-            System.out.println("_____________\n");
-            System.out.println(" | /       |\n");
-            System.out.println(" |/        O\n");
-            System.out.println(" |        -|-\n");
-            System.out.println(" |         /\\\n");
-            System.out.println(" |\n");
-            System.out.println("_|____________\n");
-            break;
-        case 10:
-            System.out.println("_____________\n");
-            System.out.println(" | /       |\n");
-            System.out.println(" |/        O\n");
-            System.out.println(" |        -|-\n");
-            System.out.println(" |         /\\\n");
-            System.out.println(" |\n");
-            System.out.println("_|____________\n");
-            System.out.println("La suicide squad ta eu !\n");
-            break;
+            case 0:
+                System.out.println("\n");
+                break;
+            case 1:
+                System.out.println("\n");
+                System.out.println("\n");
+                System.out.println("\n");
+                System.out.println("\n");
+                System.out.println("\n");
+                System.out.println("_____________\n");
+                break;
+            case 2:
+                System.out.println("\n");
+                System.out.println(" |\n");
+                System.out.println(" |\n");
+                System.out.println(" |\n");
+                System.out.println(" |\n");
+                System.out.println(" |\n");
+                System.out.println("_|____________\n");
+                break;
+            case 3:
+                System.out.println("_____________\n");
+                System.out.println(" |\n");
+                System.out.println(" |\n");
+                System.out.println(" |\n");
+                System.out.println(" |\n");
+                System.out.println(" |\n");
+                System.out.println("_|____________\n");
+                break;
+            case 4:
+                System.out.println("_____________\n");
+                System.out.println(" | /\n");
+                System.out.println(" |/\n");
+                System.out.println(" |\n");
+                System.out.println(" |\n");
+                System.out.println(" |\n");
+                System.out.println("_|____________\n");
+                break;
+            case 5:
+                System.out.println("_____________\n");
+                System.out.println(" | /       |\n");
+                System.out.println(" |/\n");
+                System.out.println(" |\n");
+                System.out.println(" |\n");
+                System.out.println(" |\n");
+                System.out.println("_|____________\n");
+                break;
+            case 6:
+                System.out.println("_____________\n");
+                System.out.println(" | /       |\n");
+                System.out.println(" |/        O\n");
+                System.out.println(" |\n");
+                System.out.println(" |\n");
+                System.out.println(" |\n");
+                System.out.println("_|____________\n");
+                break;
+            case 7:
+                System.out.println("_____________\n");
+                System.out.println(" | /       |\n");
+                System.out.println(" |/        O\n");
+                System.out.println(" |         |\n");
+                System.out.println(" |\n");
+                System.out.println(" |\n");
+                System.out.println("_|____________\n");
+                break;
+            case 8:
+                System.out.println("_____________\n");
+                System.out.println(" | /       |\n");
+                System.out.println(" |/        O\n");
+                System.out.println(" |        -|-\n");
+                System.out.println(" |\n");
+                System.out.println(" |\n");
+                System.out.println("_|____________\n");
+                break;
+            case 9:
+                System.out.println("_____________\n");
+                System.out.println(" | /       |\n");
+                System.out.println(" |/        O\n");
+                System.out.println(" |        -|-\n");
+                System.out.println(" |         /\\\n");
+                System.out.println(" |\n");
+                System.out.println("_|____________\n");
+                break;
+            case 10:
+                System.out.println("_____________\n");
+                System.out.println(" | /       |\n");
+                System.out.println(" |/        O\n");
+                System.out.println(" |        -|-\n");
+                System.out.println(" |         /\\\n");
+                System.out.println(" |\n");
+                System.out.println("_|____________\n");
+                System.out.println("La suicide squad ta eu !\n");
+                break;
             default:
                 break;
         }

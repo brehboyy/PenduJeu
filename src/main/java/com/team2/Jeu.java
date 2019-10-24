@@ -1,6 +1,14 @@
 package com.team2;
 
-
+/**
+*
+* C'est la classe qui va permettre de faire lancer le jeu et d'y jouer.
+*
+* @version 1.0
+*
+* @see Jeu
+* @author Mael Verron
+*/
 public class Jeu {
 
     /**
@@ -18,7 +26,7 @@ public class Jeu {
 
         String nomFichier="";
         if(typeDico == DictionnaireDeMotFactory.Type.Fichier) {
-        	nomFichier = menu.demandeNomFichier();
+            nomFichier = menu.demandeNomFichier();
         }
 
         final DictionnaireDeMot dic = DictionnaireDeMotFactory.creerInstance(typeDico, nomFichier);
@@ -70,6 +78,7 @@ public class Jeu {
                         lettreAtrouver[i] = lettre;
                     }
                 }
+                DessinPendu.afficherEtapesPerdu(essai);
             }else {
                 essai++;
                 DessinPendu.afficherEtapesPerdu(essai);

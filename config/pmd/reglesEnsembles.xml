@@ -16,10 +16,10 @@
   <!-- Use the entire 'code size' ruleset -->
   <rule ref="rulesets/java/codesize.xml" />
 
-  <!-- Use the entire 'controversial' ruleset -->
+  <!-- Use the entire 'controversial' ruleset
   <rule ref="rulesets/java/controversial.xml">
     <exclude name="OnlyOneReturn" />
-  </rule>
+  </rule>-->
 
   <!-- Use the entire 'coupling' ruleset
   <rule ref="rulesets/java/coupling.xml">
