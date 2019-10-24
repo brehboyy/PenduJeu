@@ -31,7 +31,7 @@ public final class DessinPendu {
      */
     public static void afficherEtapesPerdu(final int etape)
     {
-        switch (etape) {
+        switch (etape % 11) {
             case 0:
                 System.out.println("\n");
                 break;
