@@ -32,8 +32,8 @@ public class Menu {
         while (!estUnNombre) {
 
             try {
-            	Scanner scan = new Scanner(System.in);
-            	number = scan.nextInt();
+                Scanner scan = new Scanner(System.in);
+                number = scan.nextInt();
 
                 if (number == 1 || number == 2) {
                     estUnNombre = true;
