@@ -1,5 +1,4 @@
 package com.team2;
-
 import java.util.Random;
 
 public class ListeDictionnaireDeMot implements DictionnaireDeMot {
