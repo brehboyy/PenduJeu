@@ -19,39 +19,39 @@ public class Tests {
 
     @Test
     public void testGetMotFacile() {
-        FichierDictionnaireDeMot ddm = new FichierDictionnaireDeMot();
+        final FichierDictionnaireDeMot ddm = new FichierDictionnaireDeMot();
         ddm.RemplirListe("test.txt");
-        assertEquals(ddm.getMotFacile(), "foch");
+        assertEquals("Le test doit retourner vrai pour le mot foch", ddm.getMotFacile(), "foch");
     }
 
     @Test
     public void testGetMotDur() {
-        FichierDictionnaireDeMot ddm = new FichierDictionnaireDeMot();
+        final FichierDictionnaireDeMot ddm = new FichierDictionnaireDeMot();
         ddm.RemplirListe("test.txt");
-        assertEquals(ddm.getMotDur(), "publication");
+        assertEquals("\"Le test doit retourner vrai pour le mot publication", ddm.getMotDur(), "publication");
     }
 
     @Test
     public void testequalTabTrue() {
-        Jeu jeu = new Jeu();
-        assertEquals(jeu.estComplet(new char[] {'a', 'b',  'c'}), true);
+        final Jeu jeu = new Jeu();
+        assertTrue("Le test doit retourner vrai car le mot est complet", jeu.estComplet(new char[] {'a', 'b',  'c'}));
     }
 
     @Test
     public void testequalTabFalse() {
-        Jeu jeu = new Jeu();
-        assertEquals(jeu.estComplet(new char[] {'a', 'b',  '_'}), false);
+        final Jeu jeu = new Jeu();
+        assertFalse("Le test doit retourner faux car le mot est imcomplet", jeu.estComplet(new char[] {'a', 'b',  '_'}));
     }
 
     @Test
     public void testestDansMotTrue() {
-        Jeu jeu = new Jeu();
-        assertEquals(jeu.estDansMot('c',new char[] {'a', 'b',  'c'}), true);
+        final Jeu jeu = new Jeu();
+        assertTrue("Le test doit retourner vrai car la liste contient c", jeu.estDansMot('c',new char[] {'a', 'b',  'c'}));
     }
 
     @Test
     public void testestDansMotFalse() {
-        Jeu jeu = new Jeu();
-        assertEquals(jeu.estDansMot('z',new char[] {'a', 'b',  'c'}), false);
+        final Jeu jeu = new Jeu();
+        assertFalse("Le test doit retourner faux car la liste ne contient pas c", jeu.estDansMot('z',new char[] {'a', 'b',  'c'}));
     }
 }

@@ -1,5 +1,7 @@
 package com.team2;
 
+import java.text.Collator;
+
 /**
 *
 * C'est la classe qui va permettre de faire lancer le jeu et d'y jouer.
@@ -22,22 +24,16 @@ public class Jeu {
         final Menu menu = new Menu();
         final int dif = menu.accueil();
         final DictionnaireDeMotFactory.Type typeDico = menu.demandeEndroitDictionnaire();
-        String mot = "";
-
         String nomFichier="";
         if(typeDico == DictionnaireDeMotFactory.Type.Fichier) {
             nomFichier = menu.demandeNomFichier();
         }
 
         final DictionnaireDeMot dic = DictionnaireDeMotFactory.creerInstance(typeDico, nomFichier);
+        final String mot = dif == 1 ? dic.getMotFacile() : dic.getMotDur();
 
-        if (dif == 1) {
-            System.out.println("Vous etes en mode debutant\n");
-            mot = dic.getMotFacile();
-        } else if (dif == 2) {
-            System.out.println("Vous etes en mode avance\n");
-            mot = dic.getMotDur();
-        }
+        System.out.println("Vous etes en mode " + (dif == 1 ? "debutant\n" : "avance\n"));
+
         System.out.println("le mot contient " + mot.length() + " lettres");
 
         if (verificationLettre(mot)) {
@@ -69,12 +65,13 @@ public class Jeu {
         int essai = 0;
         boolean reussite = false;
         affichage(lettreAtrouver);
-
+        final Collator instance = Collator.getInstance();
         while (!reussite && essai < 10) {
             final char lettre = menu.choixLettre().charAt(0);
             if (estDansMot(lettre, motLettre)) {
                 for (int i = 0; i < motLettre.length; i++) {
-                    if (motLettre[i] == lettre) {
+                    instance.setStrength(Collator.NO_DECOMPOSITION);
+                    if (instance.compare(String.valueOf(motLettre[i]), String.valueOf(lettre)) == 0) {
                         lettreAtrouver[i] = lettre;
                     }
                 }
@@ -120,7 +117,7 @@ public class Jeu {
      * @return boolean
      */
     public boolean estDansMot(final char lettre, final char... motTab) {
-        return new String(motTab).contains(lettre + "");
+        return new String(motTab).contains(String.valueOf(lettre));
     }
 
     /**
@@ -133,7 +130,7 @@ public class Jeu {
     public void affichage(final char... lettreAtrouver) {
         final StringBuilder affichage = new StringBuilder();
         for (int i = 0; i < lettreAtrouver.length; i++) {
-            affichage.append(lettreAtrouver[i] + " ");
+            affichage.append(String.valueOf(lettreAtrouver[i]));
         }
         System.out.println(affichage.toString());
     }
