@@ -11,9 +11,32 @@ public final class DictionnaireDeMotFactory {
         Normal,
         Tordu;
     }
+    public enum TypeMode {
+        Multi,
+        Solo;
+    }
 
     private  DictionnaireDeMotFactory() {
         super();
+    }
+
+    public static AJeu ChoisirMode(final TypeMode type) {
+        AJeu result = null;
+
+        switch (type) {
+            case Multi:
+                result = new JeuMulti();
+                break;
+
+            case Solo:
+                result = new JeuSolo();
+                break;
+
+            default:
+                break;
+        }
+
+        return result;
     }
 
     public static ADictionnaireDeMot ChoisirJeu(final TypeJeu type) {

@@ -45,7 +45,7 @@ public class MenuTest {
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
         System.setIn(inContent);
         final Menu menu = new Menu();
-        assertEquals("Le test doit etre vrai et renvoyé 1 ", 1, menu.accueil());
+        assertEquals("Le test doit etre vrai et renvoyé 1 ", 1, menu.selectDifficulte());
     }
 
     @Test
@@ -54,7 +54,47 @@ public class MenuTest {
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
         System.setIn(inContent);
         final Menu menu = new Menu();
-        assertNotEquals("Le test doit etre vrai et renvoyé 2 ", 1, menu.accueil());
+        assertNotEquals("Le test doit etre vrai et renvoyé 2 ", 1, menu.selectDifficulte());
+    }
+
+    @Test
+    public void testmodeSoloTrue() {
+        final String value = "1\n";
+        final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
+        System.setIn(inContent);
+        final Menu menu = new Menu();
+        assertEquals("Le test doit etre vrai et renvoyé 1 ",
+                 DictionnaireDeMotFactory.TypeMode.Solo, menu.selectMode());
+    }
+
+    @Test
+    public void testmodeSoloFalse() {
+        final String value = "2\n";
+        final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
+        System.setIn(inContent);
+        final Menu menu = new Menu();
+        assertNotEquals("Le test doit etre vrai et renvoyé 2 ",
+                DictionnaireDeMotFactory.TypeMode.Solo, menu.selectMode());
+    }
+
+    @Test
+    public void testmodeMultiTrue() {
+        final String value = "2\n";
+        final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
+        System.setIn(inContent);
+        final Menu menu = new Menu();
+        assertEquals("Le test doit etre vrai et renvoyé 1 ",
+                 DictionnaireDeMotFactory.TypeMode.Multi, menu.selectMode());
+    }
+
+    @Test
+    public void testmodeMultiFalse() {
+        final String value = "1\n";
+        final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
+        System.setIn(inContent);
+        final Menu menu = new Menu();
+        assertNotEquals("Le test doit etre vrai et renvoyé 2 ",
+                DictionnaireDeMotFactory.TypeMode.Multi, menu.selectMode());
     }
 
     @Test
