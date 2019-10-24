@@ -9,28 +9,28 @@ package com.team2;
 * @see Main
 * @author Ousmane Diarra
 */
-public class Main {
+public final class Main {
 
 
-	/**
+    /**
      * Constructeur de la classe
      *
      * @see Main
      * @author Mael Veron
      */
     private Main() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
     /**
-     * Point d'entrée du programme
+     * Point d'entrï¿½e du programme
      *
      * @see accueil
      * @author Mael Veron
      * @param String arguments
      */
-	public static void main(final String... args) {
+    public static void main(final String... args) {
         final Jeu nouveauJeu = new Jeu();
         nouveauJeu.lancerJeu();
     }
