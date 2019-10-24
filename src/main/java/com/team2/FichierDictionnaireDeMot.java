@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
  * @see FichierDictionnaireDeMot
  * @author Ousmane Diarra
  */
-public class FichierDictionnaireDeMot implements DictionnaireDeMot {
+public class FichierDictionnaireDeMot implements IDictionnaireDeMot {
 
     public List<String> listMots;
 

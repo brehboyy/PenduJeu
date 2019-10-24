@@ -1,6 +1,6 @@
 package com.team2;
 
-public interface DictionnaireDeMot {
+public interface IDictionnaireDeMot {
 
     String getMotDur();
 
