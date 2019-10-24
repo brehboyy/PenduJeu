@@ -11,7 +11,26 @@ package com.team2;
 */
 public class Main {
 
-    public static void main(final String... args) {
+
+	/**
+     * Constructeur de la classe
+     *
+     * @see Main
+     * @author Mael Veron
+     */
+    private Main() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+    /**
+     * Point d'entrée du programme
+     *
+     * @see accueil
+     * @author Mael Veron
+     * @param String arguments
+     */
+	public static void main(final String... args) {
         final Jeu nouveauJeu = new Jeu();
         nouveauJeu.lancerJeu();
     }

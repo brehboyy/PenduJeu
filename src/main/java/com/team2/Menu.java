@@ -1,6 +1,7 @@
 package com.team2;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -29,26 +30,27 @@ public class Menu {
         boolean estUnNombre = false;
         int number = 0;
         while (!estUnNombre) {
+
             try {
-                number = (new Scanner(System.in)).nextInt();
+            	Scanner scan = new Scanner(System.in);
+            	number = scan.nextInt();
+
                 if (number == 1 || number == 2) {
                     estUnNombre = true;
                 } else {
                     System.out.println(
                             "Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte" +
-                            "entre 1 (debutant) et 2 (avance) :");
+                            " entre 1 (debutant) et 2 (avance) :");
                     estUnNombre = false;
                 }
             } catch (InputMismatchException ex) {
                 System.out.println(
                         "Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte" +
-                        "entre 1 (debutant) et 2 (avance) :");
-                estUnNombre = false;
+                        " entre 1 (debutant) et 2 (avance) :");
             } catch (NoSuchElementException ex) {
                 System.out.println(
                         "Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte" +
-                        "entre 1 (debutant) et 2 (avance) :");
-                estUnNombre = false;
+                        " entre 1 (debutant) et 2 (avance) :");
             }
         }
         return number;
@@ -88,7 +90,7 @@ public class Menu {
         boolean estUnNombre = false;
         while (!estUnNombre) {
             try {
-                final int number = (new Scanner(System.in)).nextInt();
+                final int number = new Scanner(System.in).nextInt();
                 if (number == 1 || number == 2) {
                     estUnNombre = true;
                     type = number == 1 ? DictionnaireDeMotFactory.Type.Liste : DictionnaireDeMotFactory.Type.Fichier;
@@ -96,18 +98,15 @@ public class Menu {
                     System.out.println(
                             "Valeur invalide ! \n Veuillez selectionnez un endroit" +
                             " ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
-                    estUnNombre = false;
                 }
             } catch (InputMismatchException ex) {
                 System.out.println(
                         "Valeur invalide ! \n Veuillez selectionnez un endroit" +
                         " ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
-                estUnNombre = false;
             } catch (NoSuchElementException ex) {
                 System.out.println(
                         "Valeur invalide ! \n Veuillez selectionnez un endroit" +
                         " ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
-                estUnNombre = false;
             }
         }
         return type;
