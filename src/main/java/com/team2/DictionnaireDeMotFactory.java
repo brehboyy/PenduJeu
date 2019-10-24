@@ -1,15 +1,42 @@
 package com.team2;
 
-public class DictionnaireDeMotFactory {
+public final class DictionnaireDeMotFactory {
 
-    public enum Type {
+    public enum TypeListe {
         Liste,
         Fichier;
     }
 
+    public enum TypeJeu {
+        Normal,
+        Tordu;
+    }
 
-    public static DictionnaireDeMot creerInstance(final Type type, final String texte) {
-        DictionnaireDeMot result = null;
+    private  DictionnaireDeMotFactory() {
+        super();
+    }
+
+    public static ADictionnaireDeMot ChoisirJeu(final TypeJeu type) {
+        ADictionnaireDeMot result = null;
+
+        switch (type) {
+            case Normal:
+                result = new PenduNormal();
+                break;
+
+            case Tordu:
+                result = new PenduTordu();
+                break;
+
+            default:
+                break;
+        }
+
+        return result;
+    }
+
+    public static IDictionnaireDeMot creerInstance(final TypeListe type, final String texte) {
+        IDictionnaireDeMot result = null;
 
         switch (type) {
             case Liste:

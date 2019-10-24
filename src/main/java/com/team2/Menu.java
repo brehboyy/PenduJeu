@@ -90,10 +90,10 @@ public class Menu {
      * @author Mael Veron
      * @return DictionnaireDeMotFactory.Type le type choisit
      */
-    public DictionnaireDeMotFactory.Type demandeEndroitDictionnaire() {
+    public DictionnaireDeMotFactory.TypeListe demandeEndroitDictionnaire() {
         System.out
                 .println("Veuillez selectionnez un endroit ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
-        DictionnaireDeMotFactory.Type type = null;
+        DictionnaireDeMotFactory.TypeListe type = null;
         final String messageErreur = "Valeur invalide ! \n Veuillez selectionnez un endroit"
                 + " ou prendre les mots entre 1 (la liste) et 2 (le fichier) :";
         boolean estUnNombre = false;
@@ -104,8 +104,48 @@ public class Menu {
                     final int number = this.scan.nextInt();
                     if (number == 1 || number == 2) {
                         estUnNombre = true;
-                        type = number == 1 ? DictionnaireDeMotFactory.Type.Liste
-                                : DictionnaireDeMotFactory.Type.Fichier;
+                        type = number == 1 ? DictionnaireDeMotFactory.TypeListe.Liste
+                                : DictionnaireDeMotFactory.TypeListe.Fichier;
+                    } else {
+                        System.out.println(messageErreur);
+                    }
+                } else {
+                    this.scan.next();
+                    System.out.println(messageErreur);
+                }
+            } catch (InputMismatchException ex) {
+                System.out.println(messageErreur);
+            } catch (NoSuchElementException ex) {
+                System.out.println(messageErreur);
+            }
+        }
+        return type;
+    }
+
+
+    /**
+     * Demande quel dictionnaire
+     *
+     * @see demandeEndroitDictionnaire
+     * @author Mael Veron
+     * @return DictionnaireDeMotFactory.Type le type choisit
+     */
+    public DictionnaireDeMotFactory.TypeJeu demandeJeu() {
+        System.out
+                .println("Veuillez selectionnez le jeu entre 1 (le normal) et 2 (le tordu) :");
+        DictionnaireDeMotFactory.TypeJeu type = null;
+        final String messageErreur = "Valeur invalide ! \n Veuillez selectionnez "
+                + " le jeu entre 1 (le normal) et 2 (le tordu) :";
+        boolean estUnNombre = false;
+        this.scan.reset();
+        while (!estUnNombre) {
+            try {
+                if (this.scan.hasNextInt()) {
+                    final int number = this.scan.nextInt();
+                    if (number == 1 || number == 2) {
+                        estUnNombre = true;
+                        type = number == 1 ? DictionnaireDeMotFactory.TypeJeu.Normal
+                                : DictionnaireDeMotFactory.TypeJeu.Tordu;
                     } else {
                         System.out.println(messageErreur);
                     }

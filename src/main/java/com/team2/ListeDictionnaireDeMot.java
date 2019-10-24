@@ -1,7 +1,7 @@
 package com.team2;
 import java.util.Random;
 
-public class ListeDictionnaireDeMot implements DictionnaireDeMot {
+public class ListeDictionnaireDeMot implements IDictionnaireDeMot {
 
     public String[] listMotsSimple;
     public String[] listMotsDur;
