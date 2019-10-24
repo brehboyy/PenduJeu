@@ -10,7 +10,7 @@ package com.team2;
  * @see DessinPendu
  * @author Ousmane Diarra
  */
-public class DessinPendu {
+public final class DessinPendu {
 
     /**
      * Constructeur de la classe.
