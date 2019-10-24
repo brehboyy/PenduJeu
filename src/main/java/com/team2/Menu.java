@@ -25,7 +25,7 @@ public class Menu {
     }
 
     /**
-     * Accueil du programme
+     * Accueil du programme.
      *
      * @see accueil
      * @author Mael Veron
@@ -63,7 +63,7 @@ public class Menu {
     }
 
     /**
-     * Demandele nom du fichier
+     * Demandele nom du fichier.
      *
      * @see demandeNomFichier
      * @author Mael Veron
@@ -85,7 +85,7 @@ public class Menu {
     }
 
     /**
-     * Demande quel dictionnaire
+     * Demande quel dictionnaire.
      *
      * @see demandeEndroitDictionnaire
      * @author Mael Veron
@@ -125,7 +125,7 @@ public class Menu {
 
 
     /**
-     * Demande quel dictionnaire
+     * Demande quel dictionnaire.
      *
      * @see demandeEndroitDictionnaire
      * @author Mael Veron
@@ -164,7 +164,7 @@ public class Menu {
     }
 
     /**
-     * Affiche la phrase de choix d'une lettre
+     * Affiche la phrase de choix d'une lettre.
      *
      * @see choixLettre
      * @author Mael Veron
