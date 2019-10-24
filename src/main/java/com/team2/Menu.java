@@ -31,8 +31,7 @@ public class Menu {
      * @author Mael Veron
      * @return int le niveau de difficulte
      */
-    public int accueil() {
-        System.out.println("Bonjour et bienvenue sur le jeu du pendu de la Suicide Squad");
+    public int selectDifficulte() {
         System.out.println("Veuillez selectionnez un niveau de difficulte entre 1 (debutant) et 2 (avance) :");
         final String messageErreur = "Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte"
                 + " entre 1 (debutant) et 2 (avance) :";
@@ -47,7 +46,6 @@ public class Menu {
                         estUnNombre = true;
                     } else {
                         System.out.println(messageErreur);
-                        estUnNombre = false;
                     }
                 } else {
                     this.scan.next();
@@ -60,6 +58,41 @@ public class Menu {
             }
         }
         return number;
+    }
+
+    /**Selectionne le mode de jeu.
+     *
+     * @see selectMode
+     * @author Ousmane Diarra
+     * @return Stirng le nom du fichier
+     */
+    public DictionnaireDeMotFactory.TypeMode selectMode() {
+        System.out.println("Veuillez selectionnez mode de Jeu entre 1 (Solo) et 2 (Multi) :");
+        final String messageErreur = "Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte"
+                + " entre 1 (debutant) et 2 (avance) :";
+        boolean estUnNombre = false;
+        int number = 0;
+        this.scan.reset();
+        while (!estUnNombre) {
+            try {
+                if (scan.hasNextInt()) {
+                    number = this.scan.nextInt();
+                    if (number == 1 || number == 2) {
+                        estUnNombre = true;
+                    } else {
+                        System.out.println(messageErreur);
+                    }
+                } else {
+                    this.scan.next();
+                    System.out.println(messageErreur);
+                }
+            } catch (InputMismatchException ex) {
+                System.out.println(messageErreur);
+            } catch (NoSuchElementException ex) {
+                System.out.println(messageErreur);
+            }
+        }
+        return number == 1 ? DictionnaireDeMotFactory.TypeMode.Solo : DictionnaireDeMotFactory.TypeMode.Multi;
     }
 
     /**
@@ -181,5 +214,35 @@ public class Menu {
         }
 
         return lettre;
+    }
+
+    /**
+     * Permet de saisir un nombre.
+     *
+     * @see choixNombre
+     * @author OusmaneDiarra
+     * @return int le niveau de difficulte
+     */
+    public int choixNombre() {
+        final String messageErreur = "Valeur invalide ! \n Veuillez choisir un nombre";
+        boolean estUnNombre = false;
+        int number = 0;
+        this.scan.reset();
+        while (!estUnNombre) {
+            try {
+                if (scan.hasNextInt()) {
+                    number = this.scan.nextInt();
+                    estUnNombre = true;
+                } else {
+                    this.scan.next();
+                    System.out.println(messageErreur);
+                }
+            } catch (InputMismatchException ex) {
+                System.out.println(messageErreur);
+            } catch (NoSuchElementException ex) {
+                System.out.println(messageErreur);
+            }
+        }
+        return number;
     }
 }

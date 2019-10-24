@@ -31,7 +31,9 @@ public final class Main {
      * @param String arguments
      */
     public static void main(final String... args) {
-        final Jeu nouveauJeu = new Jeu();
+        final Menu menu = new Menu();
+        final DictionnaireDeMotFactory.TypeMode typeModeJeu = menu.selectMode();
+        final AJeu nouveauJeu = DictionnaireDeMotFactory.ChoisirMode(typeModeJeu);
         nouveauJeu.lancerJeu();
     }
 

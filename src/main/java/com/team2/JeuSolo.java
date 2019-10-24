@@ -10,12 +10,7 @@ package com.team2;
 * @see Jeu
 * @author Mael Verron
 */
-public class Jeu {
-    final private Menu menu;
-
-    public Jeu() {
-        this.menu = new Menu();
-    }
+public class JeuSolo extends AJeu{
 
     /**
      * Lance le jeu.
@@ -24,7 +19,7 @@ public class Jeu {
      * @author Mael Veron
      */
     public void lancerJeu() {
-        final int dif = menu.accueil();
+        final int dif = menu.selectDifficulte();
         final DictionnaireDeMotFactory.TypeJeu typeJeu = menu.demandeJeu();
         final DictionnaireDeMotFactory.TypeListe typeDico = menu.demandeEndroitDictionnaire();
         String nomFichier="";
