@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public class PenduTordu extends ADictionnaireDeMot {
 
     @Override

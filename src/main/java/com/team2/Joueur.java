@@ -1,5 +1,6 @@
 package com.team2;
 
+@SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public class Joueur {
     private String nom;
     private int nbEssai;
