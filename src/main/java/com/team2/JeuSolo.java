@@ -10,6 +10,7 @@ package com.team2;
 * @see JeuSolo
 * @author Mael Verron
 */
+@SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public class JeuSolo extends AJeu{
 
     /**

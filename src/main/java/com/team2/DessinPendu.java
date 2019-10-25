@@ -10,6 +10,7 @@ package com.team2;
  * @see DessinPendu
  * @author Ousmane Diarra
  */
+@SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public final class DessinPendu {
 
     /**
