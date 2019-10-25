@@ -1,7 +1,9 @@
 package com.team2;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 /**
@@ -27,13 +29,13 @@ public class JeuMulti extends AJeu {
         final DictionnaireDeMotFactory.TypeJeu typeJeu = menu.demandeJeu();
         final DictionnaireDeMotFactory.TypeListe typeDico = menu.demandeEndroitDictionnaire();
 
-        System.out.println("Veuillez entrer le nombre de joueur : ");
+        System.out.println("Veuillez entrer le nombre de joueur :\n");
         final int nbJoueur = menu.choixNombre();
+        final Scanner scan = new Scanner(System.in);
         for (int i = 0; i < nbJoueur; i++) {
             System.out.println("Veuillez entrer le nom du joueur " + (i + 1) + " :");
-            menu.scan.reset();
-            if (menu.scan.hasNextLine()) {
-                final String nom = menu.scan.nextLine();
+            if (scan.hasNextLine()) {
+                final String nom = scan.nextLine();
                 lstJoueur.add(Joueur.setJoueur(nom, dif == 1 ? 10 : 20, true));
             }
         }
@@ -48,7 +50,7 @@ public class JeuMulti extends AJeu {
             for (final Joueur joueur : lstJoueur.stream().filter(j -> j.isActive()).collect(Collectors.toList())) {
                 System.out.println("A vous de jouer " + joueur.getNom());
                 if (jeu.verificationLettre(mot)) {
-                    System.out.println("Vous avez trouver le bon mot " + joueur.getNom() + ", felicitations !!");
+                    System.out.println("Vous avez trouver le bon mot " + joueur.getNom() + ", felicitations !!\n");
                 } else {
                     System.out.println("Dommage " + joueur.getNom() + " tu as perdu !! " );
                     joueur.setActive(false);
@@ -58,7 +60,7 @@ public class JeuMulti extends AJeu {
         if(lstJoueur.stream().filter(j -> j.isActive()).count() == 0) {
             System.out.println("Personne n'a gagné je vous ai battu");
         } else {
-            System.out.println("Felicitation " + lstJoueur.stream().filter(j -> j.isActive()).findFirst().get().getNom() + " tu est le grand gagnant de cette partie !!!");
+            System.out.println("Felicitation " + lstJoueur.stream().filter(j -> j.isActive()).findFirst().get().getNom() + " tu es le grand gagnant de cette partie !!!");
         }
     }
 }

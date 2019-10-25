@@ -210,7 +210,6 @@ public class Menu {
             System.out.println("Valeur invalide, entrez une seule lettre !");
             lettre = this.scan.nextLine();
         }
-
         return lettre;
     }
 
