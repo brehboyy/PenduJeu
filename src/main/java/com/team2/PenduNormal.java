@@ -4,10 +4,10 @@ import java.text.Collator;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public class PenduNormal extends ADictionnaireDeMot {
 
     @Override
-    @SuppressWarnings(value = { "all" })
     public boolean verificationLettre(final String mot) {
         final char[] motLettre = mot.toCharArray();
         final List<Character> lettreAtrouver = new ArrayList<Character>();

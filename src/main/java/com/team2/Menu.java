@@ -17,6 +17,7 @@ import java.util.Scanner;
  * @see DessinPendu
  * @author Ousmane Diarra
  */
+@SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public class Menu {
 
     public Scanner scan = new Scanner(System.in);
@@ -55,7 +56,6 @@ public class Menu {
      * @author Mael Veron
      * @return int le nombre
      */
-    @SuppressWarnings(value = { "all" })
     public int selection() {
         boolean estUnNombre = false;
         int number = 0;
@@ -111,7 +111,6 @@ public class Menu {
      * @author Mael Veron
      * @return DictionnaireDeMotFactory.Type le type choisit
      */
-    @SuppressWarnings(value = { "all" })
     public DictionnaireDeMotFactory.TypeListe demandeEndroitDictionnaire() {
         System.out
         .println("Veuillez selectionnez un endroit ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
@@ -134,7 +133,6 @@ public class Menu {
      * @author Mael Veron
      * @return DictionnaireDeMotFactory.Type le type choisit
      */
-    @SuppressWarnings(value = { "all" })
     public DictionnaireDeMotFactory.TypeJeu demandeJeu() {
         System.out
         .println("Veuillez selectionnez le jeu entre 1 (le normal) et 2 (le tordu) :");
@@ -175,7 +173,6 @@ public class Menu {
      * @author OusmaneDiarra
      * @return int le niveau de difficulte
      */
-    @SuppressWarnings(value = { "all" })
     public int choixNombre() {
         final String messageErreur = "Valeur invalide ! \n Veuillez choisir un nombre";
         boolean estUnNombre = false;

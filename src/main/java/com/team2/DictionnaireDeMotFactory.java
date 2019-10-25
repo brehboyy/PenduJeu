@@ -1,5 +1,6 @@
 package com.team2;
 
+@SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public final class DictionnaireDeMotFactory {
 
     public enum TypeListe {
@@ -20,7 +21,6 @@ public final class DictionnaireDeMotFactory {
         super();
     }
 
-    @SuppressWarnings(value = { "all" })
     public static AJeu choisirMode(final TypeMode type) {
         AJeu result = null;
 
@@ -40,7 +40,6 @@ public final class DictionnaireDeMotFactory {
         return result;
     }
 
-    @SuppressWarnings(value = { "all" })
     public static ADictionnaireDeMot choisirJeu(final TypeJeu type) {
         ADictionnaireDeMot result = null;
 
@@ -60,7 +59,6 @@ public final class DictionnaireDeMotFactory {
         return result;
     }
 
-    @SuppressWarnings(value = { "all" })
     public static IDictionnaireDeMot creerInstance(final TypeListe type, final String texte) {
         IDictionnaireDeMot result = null;
 
