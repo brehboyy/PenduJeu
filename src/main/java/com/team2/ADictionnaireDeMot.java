@@ -2,6 +2,7 @@ package com.team2;
 
 import java.util.List;
 
+@SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public abstract class ADictionnaireDeMot {
 
     public List<String> listMots;
