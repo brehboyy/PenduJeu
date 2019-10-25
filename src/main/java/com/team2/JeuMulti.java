@@ -3,7 +3,6 @@ package com.team2;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
@@ -16,6 +15,8 @@ import java.util.stream.Collectors;
 * @see JeuSolo
 * @author Ousmane Diarra
 */
+
+@SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public class JeuMulti extends AJeu {
 
     /**
@@ -26,7 +27,6 @@ public class JeuMulti extends AJeu {
      * @throws IOException
      * 			IOexceptoin
      */
-    @SuppressWarnings(value = { "all" })
     public void lancerJeu(){
         final List<Joueur> lstJoueur = new ArrayList<Joueur>();
         final int dif = menu.selectDifficulte();
