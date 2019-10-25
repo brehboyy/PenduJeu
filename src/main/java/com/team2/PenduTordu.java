@@ -22,9 +22,9 @@ public class PenduTordu extends ADictionnaireDeMot {
         while (!reussite && essai < 20) {
             final char lettre = menu.choixLettre().charAt(0);
             if (estDansMot(lettre, motLettre) &&
-                    lettreAtrouver.stream().filter(c -> c == lettre).count() !=
-                            mot.chars().mapToObj(e->(char)e).collect(Collectors.toList()).
-                                stream().filter(c -> c == lettre).count()) {
+                    lettreAtrouver.stream().filter(carac -> carac == lettre).count() !=
+                            mot.chars().mapToObj(echar->(char)echar).collect(Collectors.toList()).
+                                stream().filter(carac -> carac == lettre).count()) {
                 boolean trouve = false;
                 int i = 0;
                 while (!trouve && i < motLettre.length)

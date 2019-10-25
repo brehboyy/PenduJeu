@@ -28,28 +28,28 @@ public class FichierDicDeMotTests {
     @Test
     public void testGetMotFacile() {
         final FichierDictionnaireDeMot ddm = new FichierDictionnaireDeMot();
-        ddm.RemplirListe("test.txt");
+        ddm.remplirListe("test.txt");
         assertEquals("Le test doit retourner vrai pour le mot foch", ddm.getMotFacile(), "foch");
     }
 
     @Test
     public void testGetMotDur() {
         final FichierDictionnaireDeMot ddm = new FichierDictionnaireDeMot();
-        ddm.RemplirListe("test.txt");
+        ddm.remplirListe("test.txt");
         assertEquals("Le test doit retourner vrai pour le mot publication", ddm.getMotDur(), "publication");
     }
 
     @Test
     public void testGetMotFacileFaux() {
         final FichierDictionnaireDeMot ddm = new FichierDictionnaireDeMot();
-        ddm.RemplirListe("test.txt");
+        ddm.remplirListe("test.txt");
         assertFalse("Le test doit retourner vrai pour le mot foch", ddm.getMotFacile() == "");
     }
 
     @Test
     public void testGetMotDurFaux() {
         final FichierDictionnaireDeMot ddm = new FichierDictionnaireDeMot();
-        ddm.RemplirListe("test.txt");
+        ddm.remplirListe("test.txt");
         assertFalse("Le test doit retourner vrai pour le mot publication", ddm.getMotDur() == "");
     }
 
@@ -61,7 +61,7 @@ public class FichierDicDeMotTests {
         try
            {
             final FichierDictionnaireDeMot ddm = new FichierDictionnaireDeMot();
-            ddm.RemplirListe("e");
+            ddm.remplirListe("e");
            }
            catch(AssertionError re)
            {
@@ -81,6 +81,6 @@ public class FichierDicDeMotTests {
         expectedEx.expect(AssertionError.class);
         expectedEx.expectMessage("Lalalla");
         final FichierDictionnaireDeMot ddm = new FichierDictionnaireDeMot();
-        ddm.RemplirListe("vb");
+        ddm.remplirListe("vb");
     }
 }
