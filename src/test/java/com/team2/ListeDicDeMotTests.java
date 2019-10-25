@@ -27,7 +27,7 @@ public class ListeDicDeMotTests {
         dictMot.remplirListe("");
 
         String[] listMotsDurTemp = new String[] { "printemps", "janvier", "supprimer", "cheval", "route", "tournesol",
-                "nuit", "ourson", "haribo", "luminaire" };
+                 "ourson", "haribo", "luminaire" };
         assertEquals("Test de l'egality des liste de mot", listMotsDurTemp, dictMot.listMotsDur);
     }
 
@@ -37,7 +37,7 @@ public class ListeDicDeMotTests {
         dictMot.remplirListe("");
 
         String[] listMotsDurTemp = new String[] { "printemps", "janvier", "supprimer", "cheval", "route", "tournesol",
-                "nuit", "ourson", "haribo", "luminaire" };
+                 "ourson", "haribo", "luminaire" };
         assertNotEquals("Test de l'egality des liste de mot", listMotsDurTemp, dictMot.listMotsSimple);
     }
 
