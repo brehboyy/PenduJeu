@@ -34,7 +34,7 @@ public class JeuMulti extends AJeu {
 
         System.out.println("Veuillez entrer le nombre de joueur :\n");
         final int nbJoueur = menu.choixNombre();
-        final Scanner scan = new Scanner(System.in, Locale.getDefault().toString());
+        final Scanner scan = new Scanner(System.in);
         for (int i = 0; i < nbJoueur; i++) {
             System.out.println("Veuillez entrer le nom du joueur " + (i + 1) + " :");
             if (scan.hasNextLine()) {
@@ -42,7 +42,6 @@ public class JeuMulti extends AJeu {
                 lstJoueur.add(Joueur.setJoueur(nom, dif == 1 ? 10 : 20, true));
             }
         }
-        scan.close();
         while (lstJoueur.stream().filter(j -> j.isActive()).count() > 1) {
             final IDictionnaireDeMot dic = DictionnaireDeMotFactory.creerInstance(typeDico,
                     typeDico == DictionnaireDeMotFactory.TypeListe.Fichier ? menu.demandeNomFichier() : "");
@@ -53,14 +52,14 @@ public class JeuMulti extends AJeu {
             System.out.println("le mot contient " + mot.length() + " lettres");
             for (final Joueur joueur : lstJoueur.stream().filter(j -> j.isActive()).collect(Collectors.toList())) {
                 System.out.println("A vous de jouer " + joueur.getNom());
+                for(int clear = 0; clear < 1000; clear++) {
+                    System.out.println("\n") ;
+                }
                 if (jeu.verificationLettre(mot)) {
                     System.out.println("Vous avez trouver le bon mot " + joueur.getNom() + ", felicitations !!\n");
                 } else {
                     System.out.println("Dommage " + joueur.getNom() + " tu as perdu !! " );
                     joueur.setActive(false);
-                }
-                for(int clear = 0; clear < 1000; clear++) {
-                    System.out.println("\n") ;
                 }
             }
         }
