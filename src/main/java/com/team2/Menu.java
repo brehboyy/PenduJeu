@@ -20,7 +20,7 @@ import java.util.Scanner;
  */
 public class Menu {
 
-    public Scanner scan = new Scanner(System.in, Locale.getDefault().toString());
+    public Scanner scan = new Scanner(System.in);
 
 
     /**
