@@ -19,11 +19,8 @@ import java.util.Scanner;
  */
 public class Menu {
 
-    Scanner scan;
+    public Scanner scan = new Scanner(System.in);
 
-    public Menu() {
-        this.scan = new Scanner(System.in);
-    }
 
     /**
      * Accueil du programme.
@@ -109,7 +106,7 @@ public class Menu {
         String nomFichier = this.scan.nextLine();
         final Path path = Paths.get(nomFichier);
         final boolean fileExist = Files.exists(path, new LinkOption[] { LinkOption.NOFOLLOW_LINKS });
-        while (fileExist) {
+        if (fileExist) {
             System.out.println("Le fichier n'existe pas, rentrez en un autre :");
             if (this.scan.hasNext()) {
                 nomFichier = this.scan.nextLine();
