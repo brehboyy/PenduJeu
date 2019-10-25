@@ -19,13 +19,13 @@ public class ListeDictionnaireDeMot implements IDictionnaireDeMot {
     }
 
     @Override
-    public void RemplirListe(final String fichier) {
+    public void remplirListe(final String fichier) {
         // TODO Auto-generated method stub
         this.listMotsSimple = new String[] {
                 "vers","loto","roti","zero","ete","jour","nuit", "zoro", "miel"
         };
         this.listMotsDur = new String[] {
-                "printemps","janvier","supprimer","cheval","route","tournesol","nuit", "ourson", "haribo", "luminaire"
+                "printemps","janvier","supprimer","cheval","route","tournesol", "ourson", "haribo", "luminaire"
         };
     }
 }

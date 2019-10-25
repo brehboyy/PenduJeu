@@ -20,7 +20,7 @@ public final class DictionnaireDeMotFactory {
         super();
     }
 
-    public static AJeu ChoisirMode(final TypeMode type) {
+    public static AJeu choisirMode(final TypeMode type) {
         AJeu result = null;
 
         switch (type) {
@@ -39,7 +39,7 @@ public final class DictionnaireDeMotFactory {
         return result;
     }
 
-    public static ADictionnaireDeMot ChoisirJeu(final TypeJeu type) {
+    public static ADictionnaireDeMot choisirJeu(final TypeJeu type) {
         ADictionnaireDeMot result = null;
 
         switch (type) {
@@ -64,12 +64,12 @@ public final class DictionnaireDeMotFactory {
         switch (type) {
             case Liste:
                 result = new ListeDictionnaireDeMot();
-                result.RemplirListe("");
+                result.remplirListe("");
                 break;
 
             case Fichier:
                 result = new FichierDictionnaireDeMot();
-                result.RemplirListe(texte);
+                result.remplirListe(texte);
                 break;
 
             default:

@@ -6,5 +6,5 @@ public interface IDictionnaireDeMot {
 
     String getMotFacile();
 
-    void RemplirListe(String fichier);
+    void remplirListe(String fichier);
 }

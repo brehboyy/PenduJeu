@@ -14,7 +14,7 @@ public class ListeDicDeMotTests {
     @Test
     public void testRemplirListeSimple() {
         ListeDictionnaireDeMot dictMot = new ListeDictionnaireDeMot();
-        dictMot.RemplirListe("");
+        dictMot.remplirListe("");
 
         String[] listMotsSimpleTemp = new String[] { "vers", "loto", "roti", "zero", "ete", "jour", "nuit", "zoro",
                 "miel" };
@@ -24,7 +24,7 @@ public class ListeDicDeMotTests {
     @Test
     public void testRemplirListeDur() {
         ListeDictionnaireDeMot dictMot = new ListeDictionnaireDeMot();
-        dictMot.RemplirListe("");
+        dictMot.remplirListe("");
 
         String[] listMotsDurTemp = new String[] { "printemps", "janvier", "supprimer", "cheval", "route", "tournesol",
                 "nuit", "ourson", "haribo", "luminaire" };
@@ -34,7 +34,7 @@ public class ListeDicDeMotTests {
     @Test
     public void testRemplirListeSimpleFalse() {
         ListeDictionnaireDeMot dictMot = new ListeDictionnaireDeMot();
-        dictMot.RemplirListe("");
+        dictMot.remplirListe("");
 
         String[] listMotsDurTemp = new String[] { "printemps", "janvier", "supprimer", "cheval", "route", "tournesol",
                 "nuit", "ourson", "haribo", "luminaire" };
@@ -44,28 +44,28 @@ public class ListeDicDeMotTests {
     @Test
     public void testGetMotFacileFaux() {
         final ListeDictionnaireDeMot ddm = new ListeDictionnaireDeMot();
-        ddm.RemplirListe("");
+        ddm.remplirListe("");
         assertFalse("Le test doit retourner vrai pour le mot foch", ddm.getMotFacile() == "");
     }
 
     @Test
     public void testGetMotDurFaux() {
         final ListeDictionnaireDeMot ddm = new ListeDictionnaireDeMot();
-        ddm.RemplirListe("");
+        ddm.remplirListe("");
         assertFalse("\"Le test doit retourner vrai pour le mot publication", ddm.getMotDur() == "");
     }
 
     @Test
     public void testGetMotFacile() {
         final ListeDictionnaireDeMot ddm = new ListeDictionnaireDeMot();
-        ddm.RemplirListe("");
+        ddm.remplirListe("");
         assertTrue("Le test doit retourner vrai pour le mot foch", ddm.getMotFacile().length() > 0);
     }
 
     @Test
     public void testGetMotDur() {
         final ListeDictionnaireDeMot ddm = new ListeDictionnaireDeMot();
-        ddm.RemplirListe("");
+        ddm.remplirListe("");
         assertTrue("Le test doit retourner vrai pour le mot foch", ddm.getMotFacile().length() > 0);
     }
 
@@ -74,7 +74,7 @@ public class ListeDicDeMotTests {
     @Test
     public void testGetMotDurTrue() {
         ListeDictionnaireDeMot dictMot = new ListeDictionnaireDeMot();
-        dictMot.RemplirListe("");
+        dictMot.remplirListe("");
 
         String motdur = dictMot.getMotDur();
         boolean result = false;
@@ -87,7 +87,7 @@ public class ListeDicDeMotTests {
     @Test
     public void testGetMotFacileFalse() {
         ListeDictionnaireDeMot dictMot = new ListeDictionnaireDeMot();
-        dictMot.RemplirListe("");
+        dictMot.remplirListe("");
         String motfacile = dictMot.getMotFacile();
         assertFalse("Le test doit retourner faux", Arrays.asList(dictMot.listMotsDur).contains(motfacile));
     }
@@ -95,7 +95,7 @@ public class ListeDicDeMotTests {
     @Test
     public void testGetMotDurFalse() {
         ListeDictionnaireDeMot dictMot= new ListeDictionnaireDeMot();
-        dictMot.RemplirListe("");
+        dictMot.remplirListe("");
         assertFalse("Le test doit retourner faux", Arrays.asList(dictMot.listMotsSimple).contains("kljlkkdsl"));
     }
 
