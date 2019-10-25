@@ -32,41 +32,41 @@ public final class DessinPendu {
      */
     public static void afficherEtapesPerdu(final int etape) {
         switch (etape % 11) {
-        case 0:
-            System.out.println("\n");
-            break;
-        case 1:
-            etape1();
-            break;
-        case 2:
-            etape2();
-            break;
-        case 3:
-            etape3();
-            break;
-        case 4:
-            etape4();
-            break;
-        case 5:
-            etape5();
-            break;
-        case 6:
-            etape6();
-            break;
-        case 7:
-            etape7();
-            break;
-        case 8:
-            etape8();
-            break;
-        case 9:
-            etape9();
-            break;
-        case 10:
-            etape9();
-            break;
-        default:
-            break;
+            case 0:
+                System.out.println("\n");
+                break;
+            case 1:
+                etape1();
+                break;
+            case 2:
+                etape2();
+                break;
+            case 3:
+                etape3();
+                break;
+            case 4:
+                etape4();
+                break;
+            case 5:
+                etape5();
+                break;
+            case 6:
+                etape6();
+                break;
+            case 7:
+                etape7();
+                break;
+            case 8:
+                etape8();
+                break;
+            case 9:
+                etape9();
+                break;
+            case 10:
+                etape9();
+                break;
+            default:
+                break;
         }
     }
 
