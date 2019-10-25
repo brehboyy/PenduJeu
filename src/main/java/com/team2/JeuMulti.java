@@ -22,8 +22,9 @@ public class JeuMulti extends AJeu {
      *
      * @see lancerJeu
      * @author Ousmane Diarra
+     * @throws IOException
      */
-    public void lancerJeu() {
+    public void lancerJeu(){
         final List<Joueur> lstJoueur = new ArrayList<Joueur>();
         final int dif = menu.selectDifficulte();
         final DictionnaireDeMotFactory.TypeJeu typeJeu = menu.demandeJeu();
@@ -54,6 +55,9 @@ public class JeuMulti extends AJeu {
                 } else {
                     System.out.println("Dommage " + joueur.getNom() + " tu as perdu !! " );
                     joueur.setActive(false);
+                }
+                for(int clear = 0; clear < 1000; clear++) {
+                    System.out.println("\n") ;
                 }
             }
         }
