@@ -41,7 +41,8 @@ public class PenduTorduTest{
         lstTest.add('a');
         lstTest.add('b');
         lstTest.add('c');
-        assertTrue("Le test doit retourner vrai car le mot est complet", pt.estComplet(lstTest));
+        assertTrue("Le test doit retourner vrai car le mot est complet",
+                pt.estComplet(lstTest));
     }
 
     @Test
@@ -51,21 +52,24 @@ public class PenduTorduTest{
         lstTest.add('a');
         lstTest.add('b');
         lstTest.add('_');
-        assertFalse("Le test doit retourner faux car le mot est imcomplet", pt.estComplet(lstTest));
+        assertFalse("Le test doit retourner faux car le mot est imcomplet",
+                pt.estComplet(lstTest));
     }
 
     @Test
     public void testestDansMotTrue() {
         final PenduTordu pt = new PenduTordu();
         final char[] motLettre = "abc".toCharArray();
-        assertTrue("Le test doit retourner vrai car la liste contient c", pt.estDansMot('c', motLettre));
+        assertTrue("Le test doit retourner vrai car la liste contient c",
+                pt.estDansMot('c', motLettre));
     }
 
     @Test
     public void testestDansMotFalse() {
         final PenduTordu pt = new PenduTordu();
         final char[] motLettre = "abc".toCharArray();
-        assertFalse("Le test doit retourner faux car la liste ne contient pas c", pt.estDansMot('z',motLettre));
+        assertFalse("Le test doit retourner faux car la liste ne contient pas c",
+                pt.estDansMot('z',motLettre));
     }
 
     @Test
@@ -88,7 +92,8 @@ public class PenduTorduTest{
         lstTest.add('b');
         lstTest.add('c');
         pt.affichage(lstTest);
-        assertNotEquals("la fonction affichage renvoi a b c on doit donc avoir le me resultat", "z y x \n", outContent.toString());
+        assertNotEquals("la fonction affichage renvoi a b c on doit donc avoir le me resultat",
+                "z y x \n", outContent.toString());
     }
 
     @Test
