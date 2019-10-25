@@ -28,7 +28,7 @@ public class Menu {
     /**
      * Accueil du programme.
      *
-     * @see accueil
+     * @see selectDifficulte
      * @author Mael Veron
      * @return int le niveau de difficulte
      */

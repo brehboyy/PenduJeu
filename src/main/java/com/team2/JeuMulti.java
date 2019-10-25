@@ -4,8 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+*
+* C'est la classe qui va permettre de faire lancer le jeu et d'y jouer.
+*
+* @version 1.0
+*
+* @see JeuSolo
+* @author Ousmane Diarra
+*/
 public class JeuMulti extends AJeu {
 
+    /**
+     * Lance le jeu.
+     *
+     * @see lancerJeu
+     * @author Ousmane Diarra
+     */
     public void lancerJeu() {
         final List<Joueur> lstJoueur = new ArrayList<Joueur>();
         final int dif = menu.selectDifficulte();
