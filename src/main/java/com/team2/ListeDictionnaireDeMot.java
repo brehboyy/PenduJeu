@@ -22,7 +22,7 @@ public class ListeDictionnaireDeMot implements IDictionnaireDeMot {
     public void RemplirListe(final String fichier) {
         // TODO Auto-generated method stub
         this.listMotsSimple = new String[] {
-                "vers","loto","roti","zero","été","jour","nuit", "zoro", "miel"
+                "vers","loto","roti","zero","ete","jour","nuit", "zoro", "miel"
         };
         this.listMotsDur = new String[] {
                 "printemps","janvier","supprimer","cheval","route","tournesol","nuit", "ourson", "haribo", "luminaire"
