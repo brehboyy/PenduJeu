@@ -37,6 +37,7 @@ public final class DessinPenduTest {
         System.setOut(originalOut);
         System.setErr(originalErr);
     }
+
     @Test
     public void testafficherEtapes1PerduTrue()
     {

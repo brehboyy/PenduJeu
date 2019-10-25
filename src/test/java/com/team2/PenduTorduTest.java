@@ -1,4 +1,5 @@
 package com.team2;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
@@ -32,6 +33,7 @@ public class PenduTorduTest{
         System.setOut(originalOut);
         System.setErr(originalErr);
     }
+
     @Test
     public void testequalTabTrue() {
         final PenduTordu pt = new PenduTordu();
@@ -65,6 +67,7 @@ public class PenduTorduTest{
         final char[] motLettre = "abc".toCharArray();
         assertFalse("Le test doit retourner faux car la liste ne contient pas c", pt.estDansMot('z',motLettre));
     }
+
     @Test
     public void testaffichageTrue() {
         final PenduTordu pt = new PenduTordu();

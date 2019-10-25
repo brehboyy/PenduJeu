@@ -1,4 +1,5 @@
 package com.team2;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
@@ -32,6 +33,7 @@ public class PenduNormalTest{
         System.setOut(originalOut);
         System.setErr(originalErr);
     }
+
     @Test
     public void testequalTabTrue() {
         final PenduNormal pn = new PenduNormal();
@@ -65,6 +67,7 @@ public class PenduNormalTest{
         final char[] motLettre = "abc".toCharArray();
         assertFalse("Le test doit retourner faux car la liste ne contient pas c", pn.estDansMot('z',motLettre));
     }
+
     @Test
     public void testaffichageTrue() {
         final PenduNormal pn = new PenduNormal();
@@ -86,6 +89,7 @@ public class PenduNormalTest{
         pn.affichage(lstTest);
         assertNotEquals("la fonction affichage renvoi a b c on doit donc avoir le me resultat", "z y x \n", outContent.toString());
     }
+
     @Test
     public void testVerificationLettreTrue() {
         final String value = "a\nb\nc\n";
