@@ -20,7 +20,6 @@ import java.util.stream.Collectors;
 public class FichierDictionnaireDeMot implements IDictionnaireDeMot {
 
     public List<String> listMots;
-    public static List<String> lstMotPrec = new ArrayList<String>();
 
     public void remplirListe(final String nomFichier) {
         try (BufferedReader buff = new BufferedReader(
@@ -48,10 +47,10 @@ public class FichierDictionnaireDeMot implements IDictionnaireDeMot {
     @Override
     public String getMotDur() {
 
-        final List<String> listMotsDur = this.listMots.stream().filter(mot -> (mot.length() > 4) &&
-                !lstMotPrec.contains(mot)).collect(Collectors.toList());
+        final List<String> listMotsDur = this.listMots.stream().filter(mot -> mot.length() > 4)
+                .collect(Collectors.toList());
+
         final int indexAlea = new Random().nextInt(listMotsDur.size());
-        lstMotPrec.add(listMotsDur.get(indexAlea));
         return listMotsDur.get(indexAlea);
     }
 
@@ -68,11 +67,10 @@ public class FichierDictionnaireDeMot implements IDictionnaireDeMot {
     public String getMotFacile() {
 
         final List<String> listMotsFacile =
-                this.listMots.stream().filter(mot -> (mot.length() == 4 || mot.length() == 3) &&
-                        !lstMotPrec.contains(mot)).collect(Collectors.toList());
+                this.listMots.stream().filter(mot -> mot.length() == 4 || mot.length() == 3)
+                .collect(Collectors.toList());
 
         final int indexAlea = new Random().nextInt(listMotsFacile.size());
-        lstMotPrec.add(listMotsFacile.get(indexAlea));
         return listMotsFacile.get(indexAlea);
     }
 }
