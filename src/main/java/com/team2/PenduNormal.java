@@ -35,7 +35,7 @@ public class PenduNormal extends ADictionnaireDeMot {
             }
             reussite = estComplet(lettreAtrouver);
             affichage(lettreAtrouver);
-            System.out.println("Il vous reste " + (10 - essai) +" essai(s)");
+            System.out.println("Il vous reste " + (10 - essai) +" essai(s)\n");
         }
         return reussite;
     }
