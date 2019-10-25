@@ -4,7 +4,7 @@ import java.text.Collator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PenduNormal extends ADictionnaireDeMot{
+public class PenduNormal extends ADictionnaireDeMot {
 
     @Override
     public boolean verificationLettre(final String mot) {
@@ -27,13 +27,15 @@ public class PenduNormal extends ADictionnaireDeMot{
                     }
                 }
                 DessinPendu.afficherEtapesPerdu(essai);
-            }else {
+            }
+            else
+            {
                 essai++;
                 DessinPendu.afficherEtapesPerdu(essai);
             }
             reussite = estComplet(lettreAtrouver);
             affichage(lettreAtrouver);
-            System.out.println("Il vous reste " + (10-essai) +" essai(s)");
+            System.out.println("Il vous reste " + (10 - essai) +" essai(s)");
         }
         return reussite;
     }
