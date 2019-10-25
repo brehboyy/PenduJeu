@@ -41,7 +41,8 @@ public class PenduNormalTest{
         lstTest.add('a');
         lstTest.add('b');
         lstTest.add('c');
-        assertTrue("Le test doit retourner vrai car le mot est complet", pn.estComplet(lstTest));
+        assertTrue("Le test doit retourner vrai car le mot est complet",
+                pn.estComplet(lstTest));
     }
 
     @Test
@@ -51,21 +52,24 @@ public class PenduNormalTest{
         lstTest.add('a');
         lstTest.add('b');
         lstTest.add('_');
-        assertFalse("Le test doit retourner faux car le mot est imcomplet", pn.estComplet(lstTest));
+        assertFalse("Le test doit retourner faux car le mot est imcomplet",
+                pn.estComplet(lstTest));
     }
 
     @Test
     public void testestDansMotTrue() {
         final PenduNormal pn = new PenduNormal();
         final char[] motLettre = "abc".toCharArray();
-        assertTrue("Le test doit retourner vrai car la liste contient c", pn.estDansMot('c', motLettre));
+        assertTrue("Le test doit retourner vrai car la liste contient c",
+                pn.estDansMot('c', motLettre));
     }
 
     @Test
     public void testestDansMotFalse() {
         final PenduNormal pn = new PenduNormal();
         final char[] motLettre = "abc".toCharArray();
-        assertFalse("Le test doit retourner faux car la liste ne contient pas c", pn.estDansMot('z',motLettre));
+        assertFalse("Le test doit retourner faux car la liste ne contient pas c",
+                pn.estDansMot('z',motLettre));
     }
 
     @Test
@@ -76,7 +80,8 @@ public class PenduNormalTest{
         lstTest.add('b');
         lstTest.add('c');
         pn.affichage(lstTest);
-        assertEquals("la fonction affichage renvoi a b c on doit donc avoir le me resultat", "a b c \n", outContent.toString());
+        assertEquals("la fonction affichage renvoi a b c on doit donc avoir le me resultat", "a b c \n",
+                outContent.toString());
     }
 
     @Test
@@ -87,7 +92,8 @@ public class PenduNormalTest{
         lstTest.add('b');
         lstTest.add('c');
         pn.affichage(lstTest);
-        assertNotEquals("la fonction affichage renvoi a b c on doit donc avoir le me resultat", "z y x \n", outContent.toString());
+        assertNotEquals("la fonction affichage renvoi a b c on doit donc avoir le me resultat", "z y x \n",
+                outContent.toString());
     }
 
     @Test
