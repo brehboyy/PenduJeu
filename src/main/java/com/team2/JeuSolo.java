@@ -7,7 +7,7 @@ package com.team2;
 *
 * @version 1.0
 *
-* @see Jeu
+* @see JeuSolo
 * @author Mael Verron
 */
 public class JeuSolo extends AJeu{
@@ -15,7 +15,7 @@ public class JeuSolo extends AJeu{
     /**
      * Lance le jeu.
      *
-     * @see LancerJeu
+     * @see lancerJeu
      * @author Mael Veron
      */
     public void lancerJeu() {
