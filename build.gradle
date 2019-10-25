@@ -103,8 +103,8 @@ task cpd {
         ant.taskdef(name: 'cpd', classname: 'net.sourceforge.pmd.cpd.CPDTask', classpath: configurations.pmd.asPath)
 
         ant.cpd(minimumTokenCount: '100', format: 'xml', outputFile: new File(cpdOutputDir, 'cpd.xml')) {
-            fileset(dir: 'src') {
-                include(name: '/*.java')
+            fileset(dir: 'src/main/java') {
+                include(name: '**/*.java')
             }
         }
     }
