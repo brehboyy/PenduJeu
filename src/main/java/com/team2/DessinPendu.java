@@ -63,7 +63,7 @@ public final class DessinPendu {
                 etape9();
                 break;
             case 10:
-                etape10();
+                etape9();
                 break;
             default:
                 break;
@@ -126,7 +126,7 @@ public final class DessinPendu {
     public static void etape4() {
         barreDuHaut();
         System.out.println(" | /\n");
-        System.out.println(" |/\n");
+        transversale();
         barreHorizontale();
         barreHorizontale();
         barreHorizontale();
@@ -142,7 +142,7 @@ public final class DessinPendu {
     public static void etape5() {
         barreDuHaut();
         barreHautTete();
-        System.out.println(" |/\n");
+        transversale();
         barreHorizontale();
         barreHorizontale();
         barreHorizontale();
@@ -214,22 +214,6 @@ public final class DessinPendu {
     }
 
     /**
-     * ceci est l'etape10.
-     *
-     * @author Mael Veron
-     * @see DessinPendu
-     */
-    public static void etape10() {
-        barreDuHaut();
-        barreHautTete();
-        ligneTete();
-        System.out.println(" |        -|-\n");
-        System.out.println(" |         /\\\n");
-        barreHorizontale();
-        base();
-    }
-
-    /**
      * ceci est la base.
      *
      * @author Mael Veron
@@ -277,5 +261,15 @@ public final class DessinPendu {
      */
     public static void barreHautTete() {
         System.out.println(" | /       |\n");
+    }
+
+    /**
+     * ceci est la barre transversale.
+     *
+     * @author Mael Veron
+     * @see transversale
+     */
+    public static void transversale() {
+        System.out.println(" |/\n");
     }
 }
