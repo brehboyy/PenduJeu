@@ -13,7 +13,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- *
  * Cette classe va permettre a l'utilisateur de faire des entrer clavier.
  *
  * @version 1.0

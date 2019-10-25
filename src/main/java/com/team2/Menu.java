@@ -5,7 +5,6 @@ import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.InputMismatchException;
-import java.util.Locale;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -21,7 +20,8 @@ import java.util.Scanner;
 public class Menu {
 
     public Scanner scan = new Scanner(System.in);
-
+    final String messageErreur = "Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte"
+            + " entre 1 (debutant) et 2 (avance) :";
 
     /**
      * Accueil du programme.
@@ -32,30 +32,7 @@ public class Menu {
      */
     public int selectDifficulte() {
         System.out.println("Veuillez selectionnez un niveau de difficulte entre 1 (debutant) et 2 (avance) :");
-        final String messageErreur = "Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte"
-                + " entre 1 (debutant) et 2 (avance) :";
-        boolean estUnNombre = false;
-        int number = 0;
-        this.scan.reset();
-        while (!estUnNombre) {
-            try {
-                if (scan.hasNextInt()) {
-                    number = this.scan.nextInt();
-                    if (number == 1 || number == 2) {
-                        estUnNombre = true;
-                    } else {
-                        System.out.println(messageErreur);
-                    }
-                } else {
-                    this.scan.next();
-                    System.out.println(messageErreur);
-                }
-            } catch (InputMismatchException ex) {
-                System.out.println(messageErreur);
-            } catch (NoSuchElementException ex) {
-                System.out.println(messageErreur);
-            }
-        }
+        int number = selection();
         return number;
     }
 
@@ -67,31 +44,40 @@ public class Menu {
      */
     public DictionnaireDeMotFactory.TypeMode selectMode() {
         System.out.println("Veuillez selectionnez mode de Jeu entre 1 (Solo) et 2 (Multi) :");
-        final String messageErreur = "Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte"
-                + " entre 1 (debutant) et 2 (avance) :";
+        int number = selection();
+        return number == 1 ? DictionnaireDeMotFactory.TypeMode.Solo : DictionnaireDeMotFactory.TypeMode.Multi;
+    }
+
+    /**
+     * selection.
+     *
+     * @see selection
+     * @author Mael Veron
+     */
+    public int selection() {
         boolean estUnNombre = false;
         int number = 0;
         this.scan.reset();
-        while (!estUnNombre) {
-            try {
-                if (scan.hasNextInt()) {
-                    number = this.scan.nextInt();
-                    if (number == 1 || number == 2) {
-                        estUnNombre = true;
-                    } else {
-                        System.out.println(messageErreur);
-                    }
-                } else {
-                    this.scan.next();
-                    System.out.println(messageErreur);
-                }
-            } catch (InputMismatchException ex) {
-                System.out.println(messageErreur);
-            } catch (NoSuchElementException ex) {
-                System.out.println(messageErreur);
-            }
-        }
-        return number == 1 ? DictionnaireDeMotFactory.TypeMode.Solo : DictionnaireDeMotFactory.TypeMode.Multi;
+         while (!estUnNombre) {
+             try {
+                 if (scan.hasNextInt()) {
+                     number = this.scan.nextInt();
+                     if (number == 1 || number == 2) {
+                         estUnNombre = true;
+                     } else {
+                         System.out.println(messageErreur);
+                     }
+                 } else {
+                     this.scan.next();
+                     System.out.println(messageErreur);
+                 }
+             } catch (InputMismatchException ex) {
+                 System.out.println(messageErreur);
+             } catch (NoSuchElementException ex) {
+                 System.out.println(messageErreur);
+             }
+         }
+         return number;
     }
 
     /**
