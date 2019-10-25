@@ -1,7 +1,5 @@
 package com.team2;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 @SuppressWarnings("PMD.DataflowAnomalyAnalysis")
@@ -9,7 +7,6 @@ public class ListeDictionnaireDeMot implements IDictionnaireDeMot {
 
     public String[] listMotsSimple;
     public String[] listMotsDur;
-    public static List<String> lstMotPrec = new ArrayList<String>();
 
     @Override
     public String getMotDur() {
