@@ -26,6 +26,7 @@ public class JeuMulti extends AJeu {
      * @throws IOException
      * 			IOexceptoin
      */
+    @SuppressWarnings(value = { "all" })
     public void lancerJeu(){
         final List<Joueur> lstJoueur = new ArrayList<Joueur>();
         final int dif = menu.selectDifficulte();
