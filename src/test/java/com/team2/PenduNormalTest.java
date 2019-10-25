@@ -15,7 +15,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class PenduNormalTest{
+public class PenduNormalTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
@@ -41,8 +41,7 @@ public class PenduNormalTest{
         lstTest.add('a');
         lstTest.add('b');
         lstTest.add('c');
-        assertTrue("Le test doit retourner vrai car le mot est complet",
-                pn.estComplet(lstTest));
+        assertTrue("Le test doit retourner vrai car le mot est complet", pn.estComplet(lstTest));
     }
 
     @Test
@@ -52,24 +51,21 @@ public class PenduNormalTest{
         lstTest.add('a');
         lstTest.add('b');
         lstTest.add('_');
-        assertFalse("Le test doit retourner faux car le mot est imcomplet",
-                pn.estComplet(lstTest));
+        assertFalse("Le test doit retourner faux car le mot est imcomplet", pn.estComplet(lstTest));
     }
 
     @Test
     public void testestDansMotTrue() {
         final PenduNormal pn = new PenduNormal();
         final char[] motLettre = "abc".toCharArray();
-        assertTrue("Le test doit retourner vrai car la liste contient c",
-                pn.estDansMot('c', motLettre));
+        assertTrue("Le test doit retourner vrai car la liste contient c", pn.estDansMot('c', motLettre));
     }
 
     @Test
     public void testestDansMotFalse() {
         final PenduNormal pn = new PenduNormal();
         final char[] motLettre = "abc".toCharArray();
-        assertFalse("Le test doit retourner faux car la liste ne contient pas c",
-                pn.estDansMot('z',motLettre));
+        assertFalse("Le test doit retourner faux car la liste ne contient pas c", pn.estDansMot('z', motLettre));
     }
 
     @Test
@@ -102,8 +98,7 @@ public class PenduNormalTest{
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
         System.setIn(inContent);
         final PenduNormal pn = new PenduNormal();
-        assertTrue(
-                "La fonction devrais renvoye true car on va entrer succesivement toute les lettre du mot",
+        assertTrue("La fonction devrais renvoye true car on va entrer succesivement toute les lettre du mot",
                 pn.verificationLettre("abc"));
     }
 
@@ -113,10 +108,6 @@ public class PenduNormalTest{
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
         System.setIn(inContent);
         final PenduNormal pn = new PenduNormal();
-        assertFalse(
-                "On test le cas ou l'utilisateur perd le jeu du pendu normal",
-                pn.verificationLettre("abc"));
+        assertFalse("On test le cas ou l'utilisateur perd le jeu du pendu normal", pn.verificationLettre("abc"));
     }
 }
-
-

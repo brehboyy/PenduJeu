@@ -27,7 +27,7 @@ public class ListeDicDeMotTests {
         dictMot.remplirListe("");
 
         String[] listMotsDurTemp = new String[] { "printemps", "janvier", "supprimer", "cheval", "route", "tournesol",
-                 "ourson", "haribo", "luminaire" };
+                "ourson", "haribo", "luminaire" };
         assertEquals("Test de l'egality des liste de mot", listMotsDurTemp, dictMot.listMotsDur);
     }
 
@@ -37,7 +37,7 @@ public class ListeDicDeMotTests {
         dictMot.remplirListe("");
 
         String[] listMotsDurTemp = new String[] { "printemps", "janvier", "supprimer", "cheval", "route", "tournesol",
-                 "ourson", "haribo", "luminaire" };
+                "ourson", "haribo", "luminaire" };
         assertNotEquals("Test de l'egality des liste de mot", listMotsDurTemp, dictMot.listMotsSimple);
     }
 
@@ -69,8 +69,6 @@ public class ListeDicDeMotTests {
         assertTrue("Le test doit retourner vrai pour le mot foch", ddm.getMotFacile().length() > 0);
     }
 
-
-
     @Test
     public void testGetMotDurTrue() {
         ListeDictionnaireDeMot dictMot = new ListeDictionnaireDeMot();
@@ -94,7 +92,7 @@ public class ListeDicDeMotTests {
 
     @Test
     public void testGetMotDurFalse() {
-        ListeDictionnaireDeMot dictMot= new ListeDictionnaireDeMot();
+        ListeDictionnaireDeMot dictMot = new ListeDictionnaireDeMot();
         dictMot.remplirListe("");
         assertFalse("Le test doit retourner faux", Arrays.asList(dictMot.listMotsSimple).contains("kljlkkdsl"));
     }

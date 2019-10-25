@@ -23,7 +23,7 @@ public class FichierDictionnaireDeMot implements IDictionnaireDeMot {
 
     public void remplirListe(final String nomFichier) {
         try (BufferedReader buff = new BufferedReader(
-                new InputStreamReader(new FileInputStream(nomFichier), "UTF-8"))){
+                new InputStreamReader(new FileInputStream(nomFichier), "UTF-8"))) {
             String ligne;
             this.listMots = new ArrayList<String>();
             while ((ligne = buff.readLine()) != null) {
@@ -33,7 +33,6 @@ public class FichierDictionnaireDeMot implements IDictionnaireDeMot {
             e.printStackTrace();
         }
     }
-
 
     /**
      * Recuperation d'un mot alearoirement parmis les mots dur donc les mot qui font
@@ -66,8 +65,7 @@ public class FichierDictionnaireDeMot implements IDictionnaireDeMot {
     @Override
     public String getMotFacile() {
 
-        final List<String> listMotsFacile =
-                this.listMots.stream().filter(mot -> mot.length() == 4 || mot.length() == 3)
+        final List<String> listMotsFacile = this.listMots.stream().filter(mot -> mot.length() == 4 || mot.length() == 3)
                 .collect(Collectors.toList());
 
         final int indexAlea = new Random().nextInt(listMotsFacile.size());

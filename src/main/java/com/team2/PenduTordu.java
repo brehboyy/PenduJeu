@@ -22,20 +22,15 @@ public class PenduTordu extends ADictionnaireDeMot {
         final Collator instance = Collator.getInstance();
         while (!reussite && essai < 20) {
             final char lettre = menu.choixLettre().charAt(0);
-            if (estDansMot(lettre, motLettre) &&
-                    lettreAtrouver.stream().filter(carac -> carac == lettre).count() !=
-                            mot.chars().mapToObj(echar->(char)echar).collect(Collectors.toList()).
-                                stream().filter(carac -> carac == lettre).count()) {
+            if (estDansMot(lettre, motLettre) && lettreAtrouver.stream().filter(carac -> carac == lettre).count() != mot
+                    .chars().mapToObj(echar -> (char) echar).collect(Collectors.toList()).stream()
+                    .filter(carac -> carac == lettre).count()) {
                 boolean trouve = false;
                 int i = 0;
-                while (!trouve && i < motLettre.length)
-                {
+                while (!trouve && i < motLettre.length) {
                     instance.setStrength(Collator.NO_DECOMPOSITION);
-                    if (
-                            instance.compare(String.valueOf(motLettre[i]),
-                                    String.valueOf(lettre)) == 0 &&
-                            instance.compare(String.valueOf(motLettre[i]),
-                                    String.valueOf(lettreAtrouver.get(i))) != 0) {
+                    if (instance.compare(String.valueOf(motLettre[i]), String.valueOf(lettre)) == 0 && instance
+                            .compare(String.valueOf(motLettre[i]), String.valueOf(lettreAtrouver.get(i))) != 0) {
                         lettreAtrouver.set(i, lettre);
                         trouve = true;
                     }
@@ -52,6 +47,5 @@ public class PenduTordu extends ADictionnaireDeMot {
         }
         return reussite;
     }
-
 
 }

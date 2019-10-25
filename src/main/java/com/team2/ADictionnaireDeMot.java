@@ -45,13 +45,13 @@ public abstract class ADictionnaireDeMot {
         return new String(motTab).contains(String.valueOf(lettre));
     }
 
-    /**Affiche les lettres.
+    /**
+     * Affiche les lettres.
      *
      *
      * @see affichage
      * @author Mael Veron
-     * @param lettreAtrouver
-     *      Le mot a trouver
+     * @param lettreAtrouver Le mot a trouver
      */
     public void affichage(final List<Character> lettreAtrouver) {
         final StringBuilder affichage = new StringBuilder();

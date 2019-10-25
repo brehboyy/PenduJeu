@@ -28,18 +28,14 @@ public class PenduNormal extends ADictionnaireDeMot {
                     }
                 }
                 DessinPendu.afficherEtapesPerdu(essai);
-            }
-            else
-            {
+            } else {
                 essai++;
                 DessinPendu.afficherEtapesPerdu(essai);
             }
             reussite = estComplet(lettreAtrouver);
             affichage(lettreAtrouver);
-            System.out.println("Il vous reste " + (10 - essai) +" essai(s)\n");
+            System.out.println("Il vous reste " + (10 - essai) + " essai(s)\n");
         }
         return reussite;
     }
 }
-
-

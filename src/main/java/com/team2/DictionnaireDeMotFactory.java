@@ -4,20 +4,18 @@ package com.team2;
 public final class DictionnaireDeMotFactory {
 
     public enum TypeListe {
-        Liste,
-        Fichier;
+        Liste, Fichier;
     }
 
     public enum TypeJeu {
-        Normal,
-        Tordu;
-    }
-    public enum TypeMode {
-        Multi,
-        Solo;
+        Normal, Tordu;
     }
 
-    private  DictionnaireDeMotFactory() {
+    public enum TypeMode {
+        Multi, Solo;
+    }
+
+    private DictionnaireDeMotFactory() {
         super();
     }
 
@@ -25,16 +23,16 @@ public final class DictionnaireDeMotFactory {
         AJeu result = null;
 
         switch (type) {
-            case Multi:
-                result = new JeuMulti();
-                break;
+        case Multi:
+            result = new JeuMulti();
+            break;
 
-            case Solo:
-                result = new JeuSolo();
-                break;
+        case Solo:
+            result = new JeuSolo();
+            break;
 
-            default:
-                break;
+        default:
+            break;
         }
 
         return result;
@@ -44,16 +42,16 @@ public final class DictionnaireDeMotFactory {
         ADictionnaireDeMot result = null;
 
         switch (type) {
-            case Normal:
-                result = new PenduNormal();
-                break;
+        case Normal:
+            result = new PenduNormal();
+            break;
 
-            case Tordu:
-                result = new PenduTordu();
-                break;
+        case Tordu:
+            result = new PenduTordu();
+            break;
 
-            default:
-                break;
+        default:
+            break;
         }
 
         return result;
@@ -63,18 +61,18 @@ public final class DictionnaireDeMotFactory {
         IDictionnaireDeMot result = null;
 
         switch (type) {
-            case Liste:
-                result = new ListeDictionnaireDeMot();
-                result.remplirListe("");
-                break;
+        case Liste:
+            result = new ListeDictionnaireDeMot();
+            result.remplirListe("");
+            break;
 
-            case Fichier:
-                result = new FichierDictionnaireDeMot();
-                result.remplirListe(texte);
-                break;
+        case Fichier:
+            result = new FichierDictionnaireDeMot();
+            result.remplirListe(texte);
+            break;
 
-            default:
-                break;
+        default:
+            break;
         }
 
         return result;

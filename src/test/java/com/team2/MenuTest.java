@@ -63,8 +63,7 @@ public class MenuTest {
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
         System.setIn(inContent);
         final Menu menu = new Menu();
-        assertEquals("Le test doit etre vrai et renvoyé 1 ",
-                 DictionnaireDeMotFactory.TypeMode.Solo, menu.selectMode());
+        assertEquals("Le test doit etre vrai et renvoyé 1 ", DictionnaireDeMotFactory.TypeMode.Solo, menu.selectMode());
     }
 
     @Test
@@ -73,8 +72,8 @@ public class MenuTest {
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
         System.setIn(inContent);
         final Menu menu = new Menu();
-        assertNotEquals("Le test doit etre vrai et renvoyé 2 ",
-                DictionnaireDeMotFactory.TypeMode.Solo, menu.selectMode());
+        assertNotEquals("Le test doit etre vrai et renvoyé 2 ", DictionnaireDeMotFactory.TypeMode.Solo,
+                menu.selectMode());
     }
 
     @Test
@@ -83,8 +82,8 @@ public class MenuTest {
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
         System.setIn(inContent);
         final Menu menu = new Menu();
-        assertEquals("Le test doit etre vrai et renvoyé 1 ",
-                 DictionnaireDeMotFactory.TypeMode.Multi, menu.selectMode());
+        assertEquals("Le test doit etre vrai et renvoyé 1 ", DictionnaireDeMotFactory.TypeMode.Multi,
+                menu.selectMode());
     }
 
     @Test
@@ -93,8 +92,8 @@ public class MenuTest {
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
         System.setIn(inContent);
         final Menu menu = new Menu();
-        assertNotEquals("Le test doit etre vrai et renvoyé 2 ",
-                DictionnaireDeMotFactory.TypeMode.Multi, menu.selectMode());
+        assertNotEquals("Le test doit etre vrai et renvoyé 2 ", DictionnaireDeMotFactory.TypeMode.Multi,
+                menu.selectMode());
     }
 
     @Test
@@ -139,8 +138,8 @@ public class MenuTest {
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
         System.setIn(inContent);
         final Menu menu = new Menu();
-        assertEquals("Le test doit etre vrai et renvoyé type Normal ",
-                DictionnaireDeMotFactory.TypeJeu.Normal, menu.demandeJeu());
+        assertEquals("Le test doit etre vrai et renvoyé type Normal ", DictionnaireDeMotFactory.TypeJeu.Normal,
+                menu.demandeJeu());
     }
 
     @Test
@@ -149,8 +148,8 @@ public class MenuTest {
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
         System.setIn(inContent);
         final Menu menu = new Menu();
-        assertEquals("Le test doit etre vrai et type tordu ",
-                DictionnaireDeMotFactory.TypeJeu.Tordu, menu.demandeJeu());
+        assertEquals("Le test doit etre vrai et type tordu ", DictionnaireDeMotFactory.TypeJeu.Tordu,
+                menu.demandeJeu());
     }
 
     @Test
@@ -159,8 +158,8 @@ public class MenuTest {
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
         System.setIn(inContent);
         final Menu menu = new Menu();
-        assertNotEquals("Le test doit etre faux et renvoyé type tordu ",
-                DictionnaireDeMotFactory.TypeJeu.Normal, menu.demandeJeu());
+        assertNotEquals("Le test doit etre faux et renvoyé type tordu ", DictionnaireDeMotFactory.TypeJeu.Normal,
+                menu.demandeJeu());
     }
 
     @Test
@@ -169,11 +168,9 @@ public class MenuTest {
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
         System.setIn(inContent);
         final Menu menu = new Menu();
-        assertNotEquals("Le test doit etre faux et renvoyé type normal ",
-                DictionnaireDeMotFactory.TypeJeu.Tordu, menu.demandeJeu());
+        assertNotEquals("Le test doit etre faux et renvoyé type normal ", DictionnaireDeMotFactory.TypeJeu.Tordu,
+                menu.demandeJeu());
     }
-
-
 
     @Test
     public void testdemandeDictListTrue() {
@@ -181,8 +178,8 @@ public class MenuTest {
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
         System.setIn(inContent);
         final Menu menu = new Menu();
-        assertEquals("Le test doit etre vrai et renvoyé type Normal ",
-                DictionnaireDeMotFactory.TypeListe.Liste, menu.demandeEndroitDictionnaire());
+        assertEquals("Le test doit etre vrai et renvoyé type Normal ", DictionnaireDeMotFactory.TypeListe.Liste,
+                menu.demandeEndroitDictionnaire());
     }
 
     @Test
@@ -191,8 +188,8 @@ public class MenuTest {
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
         System.setIn(inContent);
         final Menu menu = new Menu();
-        assertEquals("Le test doit etre vrai et type tordu ",
-                DictionnaireDeMotFactory.TypeListe.Fichier, menu.demandeEndroitDictionnaire());
+        assertEquals("Le test doit etre vrai et type tordu ", DictionnaireDeMotFactory.TypeListe.Fichier,
+                menu.demandeEndroitDictionnaire());
     }
 
     @Test
@@ -201,8 +198,8 @@ public class MenuTest {
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
         System.setIn(inContent);
         final Menu menu = new Menu();
-        assertNotEquals("Le test doit etre faux et renvoyé type tordu ",
-                DictionnaireDeMotFactory.TypeListe.Liste, menu.demandeEndroitDictionnaire());
+        assertNotEquals("Le test doit etre faux et renvoyé type tordu ", DictionnaireDeMotFactory.TypeListe.Liste,
+                menu.demandeEndroitDictionnaire());
     }
 
     @Test
@@ -211,8 +208,8 @@ public class MenuTest {
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
         System.setIn(inContent);
         final Menu menu = new Menu();
-        assertNotEquals("Le test doit etre faux et renvoyé type normal ",
-                DictionnaireDeMotFactory.TypeListe.Fichier, menu.demandeEndroitDictionnaire());
+        assertNotEquals("Le test doit etre faux et renvoyé type normal ", DictionnaireDeMotFactory.TypeListe.Fichier,
+                menu.demandeEndroitDictionnaire());
     }
 
     @Test
@@ -222,7 +219,6 @@ public class MenuTest {
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
         System.setIn(inContent);
         final Menu menu = new Menu();
-        assertNotEquals("Le test doit etre faux et renvoyé type normal ",
-                "test.txt", menu.demandeNomFichier());
+        assertNotEquals("Le test doit etre faux et renvoyé type normal ", "test.txt", menu.demandeNomFichier());
     }
 }
