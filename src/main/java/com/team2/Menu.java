@@ -37,7 +37,8 @@ public class Menu {
         return number;
     }
 
-    /**Selectionne le mode de jeu.
+    /**
+     * Selectionne le mode de jeu.
      *
      * @see selectMode
      * @author Ousmane Diarra
@@ -113,18 +114,16 @@ public class Menu {
      */
     public DictionnaireDeMotFactory.TypeListe demandeEndroitDictionnaire() {
         System.out
-        .println("Veuillez selectionnez un endroit ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
+                .println("Veuillez selectionnez un endroit ou prendre les mots entre 1 (la liste) et 2 (le fichier) :");
         DictionnaireDeMotFactory.TypeListe type = null;
         final String messageErreur = "Valeur invalide ! \n Veuillez selectionnez un endroit"
                 + " ou prendre les mots entre 1 (la liste) et 2 (le fichier) :";
 
         int number = selection();
-        type = number == 1 ? DictionnaireDeMotFactory.TypeListe.Liste
-                : DictionnaireDeMotFactory.TypeListe.Fichier;
+        type = number == 1 ? DictionnaireDeMotFactory.TypeListe.Liste : DictionnaireDeMotFactory.TypeListe.Fichier;
 
         return type;
     }
-
 
     /**
      * Demande quel dictionnaire.
@@ -134,15 +133,13 @@ public class Menu {
      * @return DictionnaireDeMotFactory.Type le type choisit
      */
     public DictionnaireDeMotFactory.TypeJeu demandeJeu() {
-        System.out
-        .println("Veuillez selectionnez le jeu entre 1 (le normal) et 2 (le tordu) :");
+        System.out.println("Veuillez selectionnez le jeu entre 1 (le normal) et 2 (le tordu) :");
         DictionnaireDeMotFactory.TypeJeu type = null;
         final String messageErreur = "Valeur invalide ! \n Veuillez selectionnez "
                 + " le jeu entre 1 (le normal) et 2 (le tordu) :";
 
         int number = selection();
-        type = number == 1 ? DictionnaireDeMotFactory.TypeJeu.Normal
-                : DictionnaireDeMotFactory.TypeJeu.Tordu;
+        type = number == 1 ? DictionnaireDeMotFactory.TypeJeu.Normal : DictionnaireDeMotFactory.TypeJeu.Tordu;
 
         return type;
     }

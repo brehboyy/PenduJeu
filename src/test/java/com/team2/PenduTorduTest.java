@@ -15,7 +15,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class PenduTorduTest{
+public class PenduTorduTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
@@ -41,8 +41,7 @@ public class PenduTorduTest{
         lstTest.add('a');
         lstTest.add('b');
         lstTest.add('c');
-        assertTrue("Le test doit retourner vrai car le mot est complet",
-                pt.estComplet(lstTest));
+        assertTrue("Le test doit retourner vrai car le mot est complet", pt.estComplet(lstTest));
     }
 
     @Test
@@ -52,24 +51,21 @@ public class PenduTorduTest{
         lstTest.add('a');
         lstTest.add('b');
         lstTest.add('_');
-        assertFalse("Le test doit retourner faux car le mot est imcomplet",
-                pt.estComplet(lstTest));
+        assertFalse("Le test doit retourner faux car le mot est imcomplet", pt.estComplet(lstTest));
     }
 
     @Test
     public void testestDansMotTrue() {
         final PenduTordu pt = new PenduTordu();
         final char[] motLettre = "abc".toCharArray();
-        assertTrue("Le test doit retourner vrai car la liste contient c",
-                pt.estDansMot('c', motLettre));
+        assertTrue("Le test doit retourner vrai car la liste contient c", pt.estDansMot('c', motLettre));
     }
 
     @Test
     public void testestDansMotFalse() {
         final PenduTordu pt = new PenduTordu();
         final char[] motLettre = "abc".toCharArray();
-        assertFalse("Le test doit retourner faux car la liste ne contient pas c",
-                pt.estDansMot('z',motLettre));
+        assertFalse("Le test doit retourner faux car la liste ne contient pas c", pt.estDansMot('z', motLettre));
     }
 
     @Test
@@ -80,8 +76,8 @@ public class PenduTorduTest{
         lstTest.add('b');
         lstTest.add('c');
         pt.affichage(lstTest);
-        assertEquals("la fonction affichage renvoi a b c on doit donc avoir le me resultat"
-                , "a b c \n", outContent.toString());
+        assertEquals("la fonction affichage renvoi a b c on doit donc avoir le me resultat", "a b c \n",
+                outContent.toString());
     }
 
     @Test
@@ -92,8 +88,8 @@ public class PenduTorduTest{
         lstTest.add('b');
         lstTest.add('c');
         pt.affichage(lstTest);
-        assertNotEquals("la fonction affichage renvoi a b c on doit donc avoir le me resultat",
-                "z y x \n", outContent.toString());
+        assertNotEquals("la fonction affichage renvoi a b c on doit donc avoir le me resultat", "z y x \n",
+                outContent.toString());
     }
 
     @Test
@@ -102,8 +98,7 @@ public class PenduTorduTest{
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
         System.setIn(inContent);
         final PenduTordu pt = new PenduTordu();
-        assertTrue(
-                "La fonction devrais renvoye true car on va entrer succesivement toute les lettre du mot",
+        assertTrue("La fonction devrais renvoye true car on va entrer succesivement toute les lettre du mot",
                 pt.verificationLettre("abc"));
     }
 
@@ -113,8 +108,6 @@ public class PenduTorduTest{
         final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
         System.setIn(inContent);
         final PenduTordu pt = new PenduTordu();
-        assertFalse(
-                "On test le cas ou l'utilisateur perd le jeu du pendu normal",
-                pt.verificationLettre("abc"));
+        assertFalse("On test le cas ou l'utilisateur perd le jeu du pendu normal", pt.verificationLettre("abc"));
     }
 }

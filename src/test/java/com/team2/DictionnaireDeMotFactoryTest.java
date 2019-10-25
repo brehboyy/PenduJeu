@@ -33,33 +33,29 @@ public final class DictionnaireDeMotFactoryTest {
 
     @Test
     public void testChoisirDifTrue() {
-        assertTrue("On test si on a la bonne class de generer ici liste",
-                DictionnaireDeMotFactory.creerInstance(
-                        DictionnaireDeMotFactory.TypeListe.Liste, "") instanceof ListeDictionnaireDeMot);
+        assertTrue("On test si on a la bonne class de generer ici liste", DictionnaireDeMotFactory
+                .creerInstance(DictionnaireDeMotFactory.TypeListe.Liste, "") instanceof ListeDictionnaireDeMot);
     }
 
     @Test
     public void testChoisirDifFalse() {
         assertFalse("On test si on a la bonne class de generer une liste",
-                DictionnaireDeMotFactory.creerInstance(
-                        DictionnaireDeMotFactory.TypeListe.Fichier, "test.txt") instanceof ListeDictionnaireDeMot);
+                DictionnaireDeMotFactory.creerInstance(DictionnaireDeMotFactory.TypeListe.Fichier,
+                        "test.txt") instanceof ListeDictionnaireDeMot);
     }
 
     @Test
     public void testChoisirDifFichTrue() {
         assertTrue("On test si on a la bonne class de generer ici un fichier",
-                DictionnaireDeMotFactory.creerInstance(
-                        DictionnaireDeMotFactory.TypeListe.Fichier, "test.txt") instanceof FichierDictionnaireDeMot);
+                DictionnaireDeMotFactory.creerInstance(DictionnaireDeMotFactory.TypeListe.Fichier,
+                        "test.txt") instanceof FichierDictionnaireDeMot);
     }
 
     @Test
     public void testChoisirDifFichiFalse() {
-        assertFalse("On test si on a la bonne class de generer ici un fichier",
-                DictionnaireDeMotFactory.creerInstance(
-                        DictionnaireDeMotFactory.TypeListe.Liste, "") instanceof FichierDictionnaireDeMot);
+        assertFalse("On test si on a la bonne class de generer ici un fichier", DictionnaireDeMotFactory
+                .creerInstance(DictionnaireDeMotFactory.TypeListe.Liste, "") instanceof FichierDictionnaireDeMot);
     }
-
-
 
     @Test
     public void testChoisirJeuTrue() {

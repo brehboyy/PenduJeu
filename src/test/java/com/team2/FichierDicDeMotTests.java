@@ -12,8 +12,8 @@ import org.junit.rules.ExpectedException;
 
 /**
  *
- * Cette classe va permettre de tester toute les methodes qui doivent etre
- * testé par junit
+ * Cette classe va permettre de tester toute les methodes qui doivent etre testé
+ * par junit
  *
  * @version 1.0
  *
@@ -22,8 +22,8 @@ import org.junit.rules.ExpectedException;
  */
 public class FichierDicDeMotTests {
 
-     @Rule
-        public ExpectedException expectedEx = ExpectedException.none();
+    @Rule
+    public ExpectedException expectedEx = ExpectedException.none();
 
     @Test
     public void testGetMotFacile() {
@@ -53,27 +53,20 @@ public class FichierDicDeMotTests {
         assertFalse("Le test doit retourner vrai pour le mot publication", ddm.getMotDur() == "");
     }
 
-
-
     @Test(expected = AssertionError.class)
     @Ignore
     public void testGetMotFacileException() {
-        try
-           {
+        try {
             final FichierDictionnaireDeMot ddm = new FichierDictionnaireDeMot();
             ddm.remplirListe("e");
-           }
-           catch(AssertionError re)
-           {
-              String message = "Employee ID is null";
-              assertEquals(message, re.getMessage());
-              throw re;
-            }
-            fail("Employee Id Null exception did not throw!");
+        } catch (AssertionError re) {
+            String message = "Employee ID is null";
+            assertEquals(message, re.getMessage());
+            throw re;
+        }
+        fail("Employee Id Null exception did not throw!");
 
     }
-
-
 
     @Test
     @Ignore

@@ -39,10 +39,8 @@ public final class DessinPenduTest {
     }
 
     @Test
-    public void testafficherEtapes1PerduTrue()
-    {
+    public void testafficherEtapes1PerduTrue() {
         DessinPendu.afficherEtapesPerdu(0);
-        assertEquals("Affiche le resultat de l'etape 0",
-                "\n\n", outContent.toString());
+        assertEquals("Affiche le resultat de l'etape 0", "\n\n", outContent.toString());
     }
 }

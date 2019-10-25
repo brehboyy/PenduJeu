@@ -2,14 +2,14 @@ package com.team2;
 
 
 /**
-*
-* C'est la classe qui va permettre de faire lancer le jeu et d'y jouer.
-*
-* @version 1.0
-*
-* @see JeuSolo
-* @author Mael Verron
-*/
+ *
+ * C'est la classe qui va permettre de faire lancer le jeu et d'y jouer.
+ *
+ * @version 1.0
+ *
+ * @see JeuSolo
+ * @author Mael Verron
+ */
 @SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public class JeuSolo extends AJeu{
 

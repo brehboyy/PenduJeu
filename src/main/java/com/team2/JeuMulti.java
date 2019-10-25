@@ -7,14 +7,14 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 /**
-*
-* C'est la classe qui va permettre de faire lancer le jeu et d'y jouer.
-*
-* @version 1.0
-*
-* @see JeuSolo
-* @author Ousmane Diarra
-*/
+ *
+ * C'est la classe qui va permettre de faire lancer le jeu et d'y jouer.
+ *
+ * @version 1.0
+ *
+ * @see JeuSolo
+ * @author Ousmane Diarra
+ */
 
 @SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public class JeuMulti extends AJeu {
@@ -24,10 +24,9 @@ public class JeuMulti extends AJeu {
      *
      * @see lancerJeu
      * @author Ousmane Diarra
-     * @throws IOException
-     * 			IOexceptoin
+     * @throws IOException IOexceptoin
      */
-    public void lancerJeu(){
+    public void lancerJeu() {
         final List<Joueur> lstJoueur = new ArrayList<Joueur>();
         final int dif = menu.selectDifficulte();
         final DictionnaireDeMotFactory.TypeJeu typeJeu = menu.demandeJeu();
@@ -51,23 +50,26 @@ public class JeuMulti extends AJeu {
             System.out.println("Vous etes en mode " + (dif == 1 ? "debutant\n" : "avance\n"));
 
             System.out.println("le mot contient " + mot.length() + " lettres");
-            for (final Joueur joueur : lstJoueur.stream().filter(joue -> joue.isActive()).collect(Collectors.toList())) {
+            for (final Joueur joueur : lstJoueur.stream().filter(joue -> joue.isActive())
+                    .collect(Collectors.toList())) {
                 System.out.println("A vous de jouer " + joueur.getNom());
-                for(int clear = 0; clear < 1000; clear++) {
-                    System.out.println("\n") ;
+                for (int clear = 0; clear < 1000; clear++) {
+                    System.out.println("\n");
                 }
                 if (jeu.verificationLettre(mot)) {
                     System.out.println("Vous avez trouver le bon mot " + joueur.getNom() + ", felicitations !!\n");
                 } else {
-                    System.out.println("Dommage " + joueur.getNom() + " tu as perdu !! " );
+                    System.out.println("Dommage " + joueur.getNom() + " tu as perdu !! ");
                     joueur.setActive(false);
                 }
             }
         }
-        if(lstJoueur.stream().filter(joue -> joue.isActive()).count() == 0) {
+        if (lstJoueur.stream().filter(joue -> joue.isActive()).count() == 0) {
             System.out.println("Personne n'a gagné je vous ai battu");
         } else {
-            System.out.println("Felicitation " + lstJoueur.stream().filter(joue -> joue.isActive()).findFirst().get().getNom() + " tu es le grand gagnant de cette partie !!!");
+            System.out.println(
+                    "Felicitation " + lstJoueur.stream().filter(joue -> joue.isActive()).findFirst().get().getNom()
+                            + " tu es le grand gagnant de cette partie !!!");
         }
     }
 }
