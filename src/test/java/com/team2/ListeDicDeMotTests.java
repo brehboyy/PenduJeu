@@ -13,64 +13,72 @@ public class ListeDicDeMotTests {
 
     @Test
     public void testRemplirListeSimple() {
-        ListeDictionnaireDeMot l = new ListeDictionnaireDeMot();
-        l.RemplirListe("");
+        ListeDictionnaireDeMot dictMot = new ListeDictionnaireDeMot();
+        dictMot.RemplirListe("");
 
         String[] listMotsSimpleTemp = new String[] { "vers", "loto", "roti", "zero", "ete", "jour", "nuit", "zoro",
                 "miel" };
-        assertEquals("Test de l'egality des liste de mot", listMotsSimpleTemp, l.listMotsSimple);
+        assertEquals("Test de l'egality des liste de mot", listMotsSimpleTemp, dictMot.listMotsSimple);
     }
 
     @Test
     public void testRemplirListeDur() {
-        ListeDictionnaireDeMot l = new ListeDictionnaireDeMot();
-        l.RemplirListe("");
+        ListeDictionnaireDeMot dictMot = new ListeDictionnaireDeMot();
+        dictMot.RemplirListe("");
 
         String[] listMotsDurTemp = new String[] { "printemps", "janvier", "supprimer", "cheval", "route", "tournesol",
                 "nuit", "ourson", "haribo", "luminaire" };
-        assertEquals("Test de l'egality des liste de mot", listMotsDurTemp, l.listMotsDur);
+        assertEquals("Test de l'egality des liste de mot", listMotsDurTemp, dictMot.listMotsDur);
     }
 
     @Test
     public void testRemplirListeSimpleFalse() {
-        ListeDictionnaireDeMot l = new ListeDictionnaireDeMot();
-        l.RemplirListe("");
+        ListeDictionnaireDeMot dictMot = new ListeDictionnaireDeMot();
+        dictMot.RemplirListe("");
 
         String[] listMotsDurTemp = new String[] { "printemps", "janvier", "supprimer", "cheval", "route", "tournesol",
                 "nuit", "ourson", "haribo", "luminaire" };
-        assertNotEquals("Test de l'egality des liste de mot", listMotsDurTemp, l.listMotsSimple);
+        assertNotEquals("Test de l'egality des liste de mot", listMotsDurTemp, dictMot.listMotsSimple);
     }
 
     @Test
-    public void testRemplirListeDurFalse() {
-        ListeDictionnaireDeMot l = new ListeDictionnaireDeMot();
-        l.RemplirListe("");
-        String[] listMotsSimpleTemp = new String[] { "vers", "loto", "roti", "zero", "ete", "jour", "nuit", "zoro",
-        "miel" };
-
-        assertNotEquals("Test de l'egality des liste de mot", listMotsSimpleTemp, l.listMotsDur);
+    public void testGetMotFacileFaux() {
+        final ListeDictionnaireDeMot ddm = new ListeDictionnaireDeMot();
+        ddm.RemplirListe("");
+        assertFalse("Le test doit retourner vrai pour le mot foch", ddm.getMotFacile() == "");
     }
 
     @Test
-    public void testGetMotFacileTrue() {
-        ListeDictionnaireDeMot l = new ListeDictionnaireDeMot();
-        l.RemplirListe("");
-        String motfacile = l.getMotFacile();
-        boolean result = false;
-        if (Arrays.asList(l.listMotsSimple).contains(motfacile)) {
-            result = true;
-        }
-        assertTrue("Le test doit retourner vrai", result);
+    public void testGetMotDurFaux() {
+        final ListeDictionnaireDeMot ddm = new ListeDictionnaireDeMot();
+        ddm.RemplirListe("");
+        assertFalse("\"Le test doit retourner vrai pour le mot publication", ddm.getMotDur() == "");
     }
+
+    @Test
+    public void testGetMotFacile() {
+        final ListeDictionnaireDeMot ddm = new ListeDictionnaireDeMot();
+        ddm.RemplirListe("");
+        assertTrue("Le test doit retourner vrai pour le mot foch", ddm.getMotFacile().length() > 0);
+    }
+
+    @Test
+    public void testGetMotDur() {
+        final ListeDictionnaireDeMot ddm = new ListeDictionnaireDeMot();
+        ddm.RemplirListe("");
+        assertTrue("Le test doit retourner vrai pour le mot foch", ddm.getMotFacile().length() > 0);
+    }
+
+
 
     @Test
     public void testGetMotDurTrue() {
-        ListeDictionnaireDeMot l = new ListeDictionnaireDeMot();
-        l.RemplirListe("");
+        ListeDictionnaireDeMot dictMot = new ListeDictionnaireDeMot();
+        dictMot.RemplirListe("");
 
-        String motdur = l.getMotDur();
+        String motdur = dictMot.getMotDur();
         boolean result = false;
-        if (Arrays.asList(l.listMotsDur).contains(motdur)) {
+        if (Arrays.asList(dictMot.listMotsDur).contains(motdur)) {
             result = true;
         }
         assertTrue("Le test doit retourner vrai", result);
@@ -78,47 +86,17 @@ public class ListeDicDeMotTests {
 
     @Test
     public void testGetMotFacileFalse() {
-        ListeDictionnaireDeMot l = new ListeDictionnaireDeMot();
-        l.RemplirListe("");
-        String motfacile = l.getMotFacile();
-        boolean result = false;
-        if (Arrays.asList(l.listMotsDur).contains(motfacile)) {
-            result = true;
-        }
-        assertFalse("Le test doit retourner faux", result);
+        ListeDictionnaireDeMot dictMot = new ListeDictionnaireDeMot();
+        dictMot.RemplirListe("");
+        String motfacile = dictMot.getMotFacile();
+        assertFalse("Le test doit retourner faux", Arrays.asList(dictMot.listMotsDur).contains(motfacile));
     }
 
     @Test
     public void testGetMotDurFalse() {
-        ListeDictionnaireDeMot l = new ListeDictionnaireDeMot();
-        l.RemplirListe("");
-
-        String motdur = l.getMotDur();
-        boolean result = false;
-        if (Arrays.asList(l.listMotsSimple).contains(motdur)) {
-            result = true;
-        }
-        assertFalse("Le test doit retourner faux", result);
-    }
-
-
-    private static boolean checkEquality(String[] s1, String[] s2) {
-        if (s1 == s2)
-            return true;
-
-        if (s1 == null || s2 == null)
-            return false;
-
-        int n = s1.length;
-        if (n != s2.length)
-            return false;
-
-        for (int i = 0; i < n; i++) {
-            if (!s1[i].equals(s2[i]))
-                return false;
-        }
-
-        return true;
+        ListeDictionnaireDeMot dictMot= new ListeDictionnaireDeMot();
+        dictMot.RemplirListe("");
+        assertFalse("Le test doit retourner faux", Arrays.asList(dictMot.listMotsSimple).contains("kljlkkdsl"));
     }
 
 }

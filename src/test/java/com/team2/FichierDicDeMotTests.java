@@ -1,11 +1,7 @@
 package com.team2;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.List;
 
 import static org.junit.Assert.assertFalse;
 
@@ -40,7 +36,7 @@ public class FichierDicDeMotTests {
     public void testGetMotDur() {
         final FichierDictionnaireDeMot ddm = new FichierDictionnaireDeMot();
         ddm.RemplirListe("test.txt");
-        assertEquals("\"Le test doit retourner vrai pour le mot publication", ddm.getMotDur(), "publication");
+        assertEquals("Le test doit retourner vrai pour le mot publication", ddm.getMotDur(), "publication");
     }
 
     @Test
@@ -54,7 +50,7 @@ public class FichierDicDeMotTests {
     public void testGetMotDurFaux() {
         final FichierDictionnaireDeMot ddm = new FichierDictionnaireDeMot();
         ddm.RemplirListe("test.txt");
-        assertFalse("\"Le test doit retourner vrai pour le mot publication", ddm.getMotDur() == "");
+        assertFalse("Le test doit retourner vrai pour le mot publication", ddm.getMotDur() == "");
     }
 
 
