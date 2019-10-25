@@ -23,6 +23,7 @@ public class JeuMulti extends AJeu {
      * @see lancerJeu
      * @author Ousmane Diarra
      * @throws IOException
+     * 			IOexceptoin
      */
     public void lancerJeu(){
         final List<Joueur> lstJoueur = new ArrayList<Joueur>();
