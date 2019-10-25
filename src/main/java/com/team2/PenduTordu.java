@@ -3,6 +3,7 @@ package com.team2;
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PenduTordu extends ADictionnaireDeMot {
 
@@ -20,10 +21,13 @@ public class PenduTordu extends ADictionnaireDeMot {
         final Collator instance = Collator.getInstance();
         while (!reussite && essai < 20) {
             final char lettre = menu.choixLettre().charAt(0);
-            if (estDansMot(lettre, motLettre)) {
+            if (estDansMot(lettre, motLettre) &&
+                    lettreAtrouver.stream().filter(c -> c == lettre).count() !=
+                            mot.chars().mapToObj(e->(char)e).collect(Collectors.toList()).
+                                stream().filter(c -> c == lettre).count()) {
                 boolean trouve = false;
                 int i = 0;
-                while (!trouve)
+                while (!trouve && i < motLettre.length)
                 {
                     instance.setStrength(Collator.NO_DECOMPOSITION);
                     if (

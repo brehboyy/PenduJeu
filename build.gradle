@@ -32,7 +32,7 @@ dependencies {
 pmd {
   pmdTest.enabled = false
   toolVersion = pmdVersion
-  ruleSetConfig = rootProject.resources.text.fromFile('config/pmd/reglesEnsembles.xml')
+  ruleSetConfig = rootProject.resources.text.fromFile('config/pmd/pmd_rules_lvl1.xml')
   ignoreFailures = true
 }
 

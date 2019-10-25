@@ -20,7 +20,7 @@ import java.util.Scanner;
  */
 public class Menu {
 
-    public Scanner scan = new Scanner(System.in, Locale.getDefault().toString());
+    public Scanner scan = new Scanner(System.in;
     final String messageErreur = "Valeur invalide ! \n Veuillez selectionnez un niveau de difficulte"
             + " entre 1 (debutant) et 2 (avance) :";
 

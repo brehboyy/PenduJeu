@@ -227,7 +227,6 @@ public final class DessinPendu {
         System.out.println(" |         /\\\n");
         barreHorizontale();
         base();
-        System.out.println("La suicide squad ta eu !\n");
     }
 
     /**
