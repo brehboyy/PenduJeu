@@ -22,12 +22,9 @@ public class JeuMulti extends AJeu {
                 lstJoueur.add(Joueur.setJoueur(nom, dif == 1 ? 10 : 20, true));
             }
         }
-        String nomFichier = "";
-        if (typeDico == DictionnaireDeMotFactory.TypeListe.Fichier) {
-            nomFichier = menu.demandeNomFichier();
-        }
         while (lstJoueur.stream().filter(j -> j.isActive()).count() > 1) {
-            final IDictionnaireDeMot dic = DictionnaireDeMotFactory.creerInstance(typeDico, nomFichier);
+            final IDictionnaireDeMot dic = DictionnaireDeMotFactory.creerInstance(typeDico,
+                    typeDico == DictionnaireDeMotFactory.TypeListe.Fichier ? menu.demandeNomFichier() : "");
             final String mot = dif == 1 ? dic.getMotFacile() : dic.getMotDur();
             final ADictionnaireDeMot jeu = DictionnaireDeMotFactory.ChoisirJeu(typeJeu);
             System.out.println("Vous etes en mode " + (dif == 1 ? "debutant\n" : "avance\n"));

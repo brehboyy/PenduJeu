@@ -115,6 +115,25 @@ public class MenuTest {
         final Menu menu = new Menu();
         assertNotEquals("Le test doit etre vrai et renvoyé b ", "a", menu.choixLettre());
     }
+
+    @Test
+    public void testaccueilChoixNombreTrue() {
+        final String value = "1\n";
+        final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
+        System.setIn(inContent);
+        final Menu menu = new Menu();
+        assertEquals("Le test doit etre vrai et renvoyé 1 ", 1, menu.choixNombre());
+    }
+
+    @Test
+    public void testaccueilChoixNombreFalse() {
+        final String value = "2\n";
+        final ByteArrayInputStream inContent = new ByteArrayInputStream(value.getBytes());
+        System.setIn(inContent);
+        final Menu menu = new Menu();
+        assertNotEquals("Le test doit etre vrai et renvoyé 2 ", 1, menu.choixNombre());
+    }
+
     @Test
     public void testdemandeJeuNormalTrue() {
         final String value = "1\n";
