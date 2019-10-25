@@ -3,6 +3,7 @@ package com.team2;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
@@ -33,7 +34,7 @@ public class JeuMulti extends AJeu {
 
         System.out.println("Veuillez entrer le nombre de joueur :\n");
         final int nbJoueur = menu.choixNombre();
-        final Scanner scan = new Scanner(System.in);
+        final Scanner scan = new Scanner(System.in, Locale.getDefault().toString());
         for (int i = 0; i < nbJoueur; i++) {
             System.out.println("Veuillez entrer le nom du joueur " + (i + 1) + " :");
             if (scan.hasNextLine()) {
@@ -41,6 +42,7 @@ public class JeuMulti extends AJeu {
                 lstJoueur.add(Joueur.setJoueur(nom, dif == 1 ? 10 : 20, true));
             }
         }
+        scan.close();
         while (lstJoueur.stream().filter(j -> j.isActive()).count() > 1) {
             final IDictionnaireDeMot dic = DictionnaireDeMotFactory.creerInstance(typeDico,
                     typeDico == DictionnaireDeMotFactory.TypeListe.Fichier ? menu.demandeNomFichier() : "");

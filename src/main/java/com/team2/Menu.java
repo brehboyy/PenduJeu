@@ -5,6 +5,7 @@ import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.InputMismatchException;
+import java.util.Locale;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -19,7 +20,7 @@ import java.util.Scanner;
  */
 public class Menu {
 
-    public Scanner scan = new Scanner(System.in);
+    public Scanner scan = new Scanner(System.in, Locale.getDefault().toString());
 
 
     /**
