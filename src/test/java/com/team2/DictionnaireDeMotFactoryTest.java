@@ -10,25 +10,25 @@ public final class DictionnaireDeMotFactoryTest {
     @Test
     public void testChoisirModeTrue() {
         assertTrue("On test si on a la bonne class de generer ici JeuSolo",
-                DictionnaireDeMotFactory.ChoisirMode(DictionnaireDeMotFactory.TypeMode.Solo) instanceof JeuSolo);
+                DictionnaireDeMotFactory.choisirMode(DictionnaireDeMotFactory.TypeMode.Solo) instanceof JeuSolo);
     }
 
     @Test
     public void testChoisirModeFalse() {
         assertFalse("On test si on a la bonne class de generer ici JeuSolo",
-                DictionnaireDeMotFactory.ChoisirMode(DictionnaireDeMotFactory.TypeMode.Multi) instanceof JeuSolo);
+                DictionnaireDeMotFactory.choisirMode(DictionnaireDeMotFactory.TypeMode.Multi) instanceof JeuSolo);
     }
 
     @Test
     public void testChoisirModeMultiTrue() {
         assertTrue("On test si on a la bonne class de generer ici JeuMulti",
-                DictionnaireDeMotFactory.ChoisirMode(DictionnaireDeMotFactory.TypeMode.Multi) instanceof JeuMulti);
+                DictionnaireDeMotFactory.choisirMode(DictionnaireDeMotFactory.TypeMode.Multi) instanceof JeuMulti);
     }
 
     @Test
     public void testChoisirModeMultiFalse() {
         assertFalse("On test si on a la bonne class de generer ici JeuMulti",
-                DictionnaireDeMotFactory.ChoisirMode(DictionnaireDeMotFactory.TypeMode.Solo) instanceof JeuMulti);
+                DictionnaireDeMotFactory.choisirMode(DictionnaireDeMotFactory.TypeMode.Solo) instanceof JeuMulti);
     }
 
     @Test
@@ -64,24 +64,24 @@ public final class DictionnaireDeMotFactoryTest {
     @Test
     public void testChoisirJeuTrue() {
         assertTrue("On test si on a la bonne class de generer ici Normal",
-                DictionnaireDeMotFactory.ChoisirJeu(DictionnaireDeMotFactory.TypeJeu.Normal) instanceof PenduNormal);
+                DictionnaireDeMotFactory.choisirJeu(DictionnaireDeMotFactory.TypeJeu.Normal) instanceof PenduNormal);
     }
 
     @Test
     public void testChoisirJeuFalse() {
         assertFalse("On test si on a la bonne class de generer ici Normal",
-                DictionnaireDeMotFactory.ChoisirJeu(DictionnaireDeMotFactory.TypeJeu.Tordu) instanceof PenduNormal);
+                DictionnaireDeMotFactory.choisirJeu(DictionnaireDeMotFactory.TypeJeu.Tordu) instanceof PenduNormal);
     }
 
     @Test
     public void testChoisirJeuTorduMultiTrue() {
         assertTrue("On test si on a la bonne class de generer ici Tordu",
-                DictionnaireDeMotFactory.ChoisirJeu(DictionnaireDeMotFactory.TypeJeu.Tordu) instanceof PenduTordu);
+                DictionnaireDeMotFactory.choisirJeu(DictionnaireDeMotFactory.TypeJeu.Tordu) instanceof PenduTordu);
     }
 
     @Test
     public void testChoisirJeuTorduMultiFalse() {
         assertFalse("On test si on a la bonne class de generer ici Tordu",
-                DictionnaireDeMotFactory.ChoisirJeu(DictionnaireDeMotFactory.TypeJeu.Normal) instanceof PenduTordu);
+                DictionnaireDeMotFactory.choisirJeu(DictionnaireDeMotFactory.TypeJeu.Normal) instanceof PenduTordu);
     }
 }

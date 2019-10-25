@@ -34,7 +34,7 @@ public final class Main {
     public static void main(final String... args) {
         final Menu menu = new Menu();
         final DictionnaireDeMotFactory.TypeMode typeModeJeu = menu.selectMode();
-        final AJeu nouveauJeu = DictionnaireDeMotFactory.ChoisirMode(typeModeJeu);
+        final AJeu nouveauJeu = DictionnaireDeMotFactory.choisirMode(typeModeJeu);
         nouveauJeu.lancerJeu();
     }
 

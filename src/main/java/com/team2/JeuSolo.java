@@ -29,7 +29,7 @@ public class JeuSolo extends AJeu{
 
         final IDictionnaireDeMot dic = DictionnaireDeMotFactory.creerInstance(typeDico, nomFichier);
         final String mot = dif == 1 ? dic.getMotFacile() : dic.getMotDur();
-        final ADictionnaireDeMot jeu = DictionnaireDeMotFactory.ChoisirJeu(typeJeu);
+        final ADictionnaireDeMot jeu = DictionnaireDeMotFactory.choisirJeu(typeJeu);
         System.out.println("Vous etes en mode " + (dif == 1 ? "debutant\n" : "avance\n"));
 
         System.out.println("le mot contient " + mot.length() + " lettres");

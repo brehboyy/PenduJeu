@@ -19,7 +19,7 @@ public class FichierDictionnaireDeMot implements IDictionnaireDeMot {
 
     public List<String> listMots;
 
-    public void RemplirListe(final String nomFichier) {
+    public void remplirListe(final String nomFichier) {
         try (BufferedReader buff = new BufferedReader(
                 new InputStreamReader(new FileInputStream(nomFichier), "UTF-8"))){
             String ligne;
