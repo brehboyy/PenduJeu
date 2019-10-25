@@ -26,9 +26,10 @@ public final class Main {
     /**
      * Point d'entr�e du programme.
      *
-     * @see accueil
+     * @see main
      * @author Mael Veron
-     * @param String arguments
+     * @param args
+     * 		Argument pour les args
      */
     public static void main(final String... args) {
         final Menu menu = new Menu();
